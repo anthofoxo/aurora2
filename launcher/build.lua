@@ -1,0 +1,5 @@
+project "launcher"
+debugdir "%{wks.location}/working"
+kind "WindowedApp"
+files "*.cpp"
+links "aurora"
