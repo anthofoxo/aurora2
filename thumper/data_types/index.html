@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/data_types/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Data Types - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Data Types";
+        var mkdocs_page_input_path = "thumper\\data_types.md";
+        var mkdocs_page_url = "/aurora/thumper/data_types/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Data Types</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basic-types">Basic Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#s8">s8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#u8">u8</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#s16">s16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#u16">u16</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#s32">s32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#u32">u32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f32">f32</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#alias-types">Alias Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bool">bool</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structs-and-arrays">Structs and Arrays</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#placeholder-types">Placeholder Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unbounded">Unbounded</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bounded">Bounded</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#composite-types-and-structures">Composite Types and Structures</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vect">vec\&lt;T></a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#composite-aliases">Composite aliases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sstr">sstr</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f32vec2">f32vec2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f32vec3">f32vec3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#u8vec4">u8vec4</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-point-types">Data Point Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#booldatapoint">boolDataPoint</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f32datapoint">f32DataPoint</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+      <li class="breadcrumb-item active">Data Types</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/data_types.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="data-types">Data Types</h1>
+<h2 id="basic-types">Basic Types</h2>
+<p>All data types are stored in memory with <a href="https://en.wikipedia.org/wiki/Endianness">little-endian byte order</a>.</p>
+<h3 id="s8">s8</h3>
+<p>A signed 8-bit integer.</p>
+<h3 id="u8">u8</h3>
+<p>An unsigned 8-bit integer.</p>
+<h3 id="s16">s16</h3>
+<p>A signed 16-bit integer.</p>
+<h3 id="u16">u16</h3>
+<p>An unsigned 16-bit integer.</p>
+<h3 id="s32">s32</h3>
+<p>A signed 32-bit integer.</p>
+<h3 id="u32">u32</h3>
+<p>An unsigned 32-bit integer.</p>
+<h3 id="f32">f32</h3>
+<p>A 32-bit <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754</a> floating point value.</p>
+<h2 id="alias-types">Alias Types</h2>
+<h3 id="bool">bool</h3>
+<p>An alias of <code>u8</code>. A boolean representing <code>true</code> or <code>false</code>. Valid values are <code>0</code> and <code>1</code>.</p>
+<h2 id="structs-and-arrays">Structs and Arrays</h2>
+<p>Arrays and Structs are used to group data together and is common for data points, headers and plenty of other types. Arrays and Structs are byte aligned and tightly packed. This means there are no padding bytes between members.</p>
+<p>A Struct lets us make composite types and group data together with names. This makes it easier for us to reason about data.</p>
+<p>Unlike in <code>C</code> or <code>C++</code> we can use variables in our array sizes. This help us define structures cleanly, however when it comes to implementing these structures, you will need to use containers of some kind.</p>
+<p>In constract to the tiddlyhost wiki, our types have sizes implicitly known. This means instead of every Struct telling us the individual byte sizes and types, we'll just tell you the type name, and the size can be inferred based on the type. This makes arrays much more intuitive too.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u8</code></td>
+<td>a</td>
+<td><em>Example</em></td>
+</tr>
+<tr>
+<td><code>u8</code></td>
+<td>b</td>
+<td><em>Example</em></td>
+</tr>
+<tr>
+<td><code>u8</code></td>
+<td>c</td>
+<td><em>Example</em></td>
+</tr>
+</tbody>
+</table>
+<p>Given this structure, lets assume <code>a</code>, <code>b</code>, and <code>c</code> are related. We can simply store them together in an array.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u8[3]</code></td>
+<td>a</td>
+<td><em>Example</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="placeholder-types">Placeholder Types</h2>
+<p>Placeholder types denote data of unknown size. Ideally we should never need these, however we don't fully understand the Thumper structures so this is needed to make notes to ourselves in a semantic way.</p>
+<h3 id="unbounded">Unbounded</h3>
+<p>The unbound placeholder <code>...</code> may have any value from <code>0</code> to <code>+Inf</code>. This is the most extreme placeholder type may select any amount of data.</p>
+<h3 id="bounded">Bounded</h3>
+<p>The bounded placeholder <code>a..b</code> may select any value in the range in the closed range of <code>a</code> to <code>b</code> inclusive.</p>
+<p>For example <code>u8[4..6]</code> may select <code>4</code>, <code>5</code>, or <code>6</code> bytes.</p>
+<h2 id="composite-types-and-structures">Composite Types and Structures</h2>
+<p>Its common to see arrays with a dynamic size. This will be called a <code>vector</code>. Pull from C++ terms. Shortened to <code>vec</code> in structs.</p>
+<h3 id="vect">vec\&lt;T&gt;</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u32</code></td>
+<td>count</td>
+<td>Number of elements in the array</td>
+</tr>
+<tr>
+<td><code>T[count]</code></td>
+<td>elements</td>
+<td>The elements of the array</td>
+</tr>
+</tbody>
+</table>
+<h2 id="composite-aliases">Composite aliases</h2>
+<h3 id="sstr">sstr</h3>
+<p>A string in Thumper is simply a size that refers to the following byte count, then the bytes themselves. Strings are an alias of <code>vec&lt;T&gt; where T = u8</code>. When expanded follows this structure:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u32</code></td>
+<td>size</td>
+<td>Number of bytes in the string</td>
+</tr>
+<tr>
+<td><code>u8[size]</code></td>
+<td>bytes</td>
+<td>The bytes of the string</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f32vec2">f32vec2</h3>
+<p>An array of 2 <code>f32</code>. Typically used to represent texture coordinates in meshes.</p>
+<ul>
+<li>The first offset is commonly aliased as <code>x</code>, <code>r</code> or <code>s</code>.</li>
+<li>The second offset is commonly aliased as <code>y</code>, <code>g</code> or <code>t</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f32[2]</code></td>
+<td>vals</td>
+<td>The values of the vector</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f32vec3">f32vec3</h3>
+<p>An array of 3 <code>f32</code>. Typically used to represent positions and normal vectors.</p>
+<ul>
+<li>The first offset is commonly aliased as <code>x</code>, or <code>r</code>.</li>
+<li>The second offset is commonly aliased as <code>y</code>, <code>g</code>.</li>
+<li>The third offset is commonly aliased as <code>z</code>, <code>b</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f32[3]</code></td>
+<td>vals</td>
+<td>The values of the vector</td>
+</tr>
+</tbody>
+</table>
+<h3 id="u8vec4">u8vec4</h3>
+<p>An array of 4 <code>u8</code>. Typically used to represent colors.</p>
+<ul>
+<li>The first offset is commonly aliased as <code>x</code>, or <code>r</code>.</li>
+<li>The second offset is commonly aliased as <code>y</code>, <code>g</code>.</li>
+<li>The third offset is commonly aliased as <code>z</code>, <code>b</code>.</li>
+<li>The fourth offset is commonly aliased as <code>w</code>, <code>a</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u8[4]</code></td>
+<td>vals</td>
+<td>The values of the vector</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-point-types">Data Point Types</h2>
+<h3 id="booldatapoint">boolDataPoint</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f32</code></td>
+<td>time</td>
+<td>At what time (in beats) this data point occurs. The allowed values for time \(t\) are: \(t \in \mathbb{Z} \vert 0 \leq t &lt; total number of beats\)</td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>value</td>
+<td>ON/OFF state. <code>false</code> = OFF; <code>true</code> = ON.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>interpolation</td>
+<td>This is meaningless for <code>boolDataPoint</code></td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>easing</td>
+<td>This is meaningless for <code>boolDataPoint</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="f32datapoint">f32DataPoint</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f32</code></td>
+<td>time</td>
+<td>At what time (in beats) this data point occurs. The allowed values for time depend on the context.</td>
+</tr>
+<tr>
+<td><code>f32</code></td>
+<td>value</td>
+<td>The value this data point holds. The specific meaning of this value depends on the context.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>interpolation</td>
+<td>What interpolation method is applied on this data point with its neighboring data points. See <a href="../trait_values/#interpolation">Interpolation Trait</a> for a list of allowed values.</td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>easing</td>
+<td>What easing method is applied on this data point with its neighboring data points. See <a href="../trait_values/#easing">Easing Trait</a> for a list of allowed values.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mesh_hashes/" class="btn btn-neutral float-left" title=".x Hashes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../trait_values/" class="btn btn-neutral float-right" title="Trait Values">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../mesh_hashes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../trait_values/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

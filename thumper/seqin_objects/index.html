@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/seqin_objects/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Sequencer Objects - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sequencer Objects";
+        var mkdocs_page_input_path = "thumper\\seqin_objects.md";
+        var mkdocs_page_url = "/aurora/thumper/seqin_objects/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Objects</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Sequencer Objects</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#format">Format</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#header">Header</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#for-each-sub-level">For each sub-level:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#after-the-sub-levels">After the sub-levels:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#data-points">Data Points</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#for-each-data-point">For each data point:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#after-the-data-points">After the data points:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#for-each-interval">For each interval:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#footer">Footer</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Objects</li>
+      <li class="breadcrumb-item active">Sequencer Objects</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/seqin_objects.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sequencer-objects">Sequencer Objects</h1>
+<p>A Sequencer Object (or TraitLine Object) is an object edited on a single track of the sequencer in <a href="../drools_editor/">Drool's Editor</a>. Sequencer Objects usually represent certain parameters of some other objects being modulated or turned on/off over time. They contain one or more data points, representing how the values of those parameters change over time. Sequencer Objects are almost ubiquitous and can reside in many different kinds of main objects, such as <a href="../lvl/">.lvl Objects</a> and <a href="../leaf/">.leaf Objects</a>.</p>
+<h2 id="format">Format</h2>
+<h3 id="header">Header</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>variable</td>
+<td><a href="../data_types/#string">string</a></td>
+<td>Name of the main object where the parameter can be found</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="../data_types/#int32">int32</a></td>
+<td>Number of sub-levels under the main object to get to the specific sub-object/parameter. In general, if this number is <code>1</code>, the parameter belongs directly to the main object; otherwise the parameter belongs to one of the sub-objects.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-each-sub-level">For each sub-level:</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>N/A</td>
+<td>The <a href="../magic_numbers/">"magic number"</a> identifying which sub-object or parameter is to be selected</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="../data_types/#int32">int32</a></td>
+<td>If mutiple sub-objects share the same <a href="../magic_numbers/">"magic number"</a>, this number \(n\) selects the \(n\)th sub-object, using zero-based numbering. If the <a href="../magic_numbers/">"magic number"</a> can uniquely identify a sub-object or parameter, this number is set to <code>-1</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="after-the-sub-levels">After the sub-levels:</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><a href="../data_types/#int32">int32</a></td>
+<td>The index identifying the data type of the values in the data points. See <a href="../trait_values/#trait-type">Trait Type Trait</a> for a list of allowed values. The data type depends on the parameter being modulated.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-points">Data Points</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><a href="../data_types/#int32">int32</a></td>
+<td>Total number of data points</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-each-data-point">For each data point:</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>variable</td>
+<td>any of the <a href="../data_types/#data-point-types">Data Point Types</a></td>
+<td>The value of the parameter at a specific time</td>
+</tr>
+</tbody>
+</table>
+<p>The data type is defined in the header. All data points in the same Sequencer Object have the same data type.</p>
+<h3 id="after-the-data-points">After the data points:</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><a href="../data_types/#int32">int32</a></td>
+<td>Total number of displayed UI elements for data points on <a href="../drools_editor/">Drool's Editor</a>. These are typically intervals represented by pairs of starting points and ending points. Each interval has a displayed value that is being applied over the entire interval. The displayed value should be equal to the sum of all values from the data points above that are within the interval. Typical examples are the pitch and turn parameters in a <a href="../leaf/">.leaf Object</a>. The displayed values in these UI elements do not affect the actual data point values above. If this number is <code>0</code>, the data points above are displayed "as is" (no special handling for display is required).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-each-interval">For each interval:</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>variable</td>
+<td>any of the <a href="../data_types/#data-point-types">Data Point Types</a></td>
+<td>The starting point of an interval. This contains the value of the parameter displayed on <a href="../drools_editor/">Drool's Editor</a> starting from a specific time.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>any of the <a href="../data_types/#data-point-types">Data Point Types</a></td>
+<td>The ending point of an interval. Only the time is important; the value is meaningless.</td>
+</tr>
+</tbody>
+</table>
+<p>All UI elements have the same data type as the data points.</p>
+<h3 id="footer">Footer</h3>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td><em>Unknown</em>. See <a href="../trait_values/#intensity">Intensity Trait</a> for a list of allowed values.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td><em>Unknown</em>. See <a href="../trait_values/#intensity">Intensity Trait</a> for a list of allowed values.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>int32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td>bool</td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../object_param_selectors/" class="btn btn-neutral float-left" title="Object/Parameter Selectors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../script_nodes/" class="btn btn-neutral float-right" title="Script Nodes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../object_param_selectors/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../script_nodes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

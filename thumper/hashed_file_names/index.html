@@ -1,0 +1,3124 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/hashed_file_names/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Hashed File Names - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Hashed File Names";
+        var mkdocs_page_input_path = "thumper\\hashed_file_names.md";
+        var mkdocs_page_url = "/aurora/thumper/hashed_file_names/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Magic Numbers</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Hashed File Names</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objlib-files">.objlib Files</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_1">/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boss">/boss/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_7">/boss/boss_7/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_array">/boss/boss_array/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_fingers">/boss/boss_fingers/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_frac">/boss/boss_frac/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_jump">/boss/boss_jump/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_spiral">/boss/boss_spiral/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_spirograph">/boss/boss_spirograph/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_tube">/boss/boss_tube/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossboss_tunnel">/boss/boss_tunnel/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bosscrakhed_fingers">/boss/crakhed_fingers/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossgate_diamond">/boss/gate_diamond/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bossgate_triangle">/boss/gate_triangle/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decorators">/decorators/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsbarriers">/decorators/barriers/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsdecorative">/decorators/decorative/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsdecorativesequins">/decorators/decorative/sequins/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsgameplay_objects">/decorators/gameplay_objects/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsjump_high">/decorators/jump_high/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsjumper">/decorators/jumper/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorslevel_fingers">/decorators/level_fingers/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsobstacleswurms">/decorators/obstacles/wurms/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decoratorsobstacleswurmssequins">/decorators/obstacles/wurms/sequins/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#entity">/entity/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#global">/global/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalambient_decorators">/global/ambient_decorators/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalboss_shield">/global/boss_shield/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globaldamage_flash">/global/damage_flash/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalelectric_effect">/global/electric_effect/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalending_sequence">/global/ending_sequence/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalexplosion_spikes">/global/explosion_spikes/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalgeometric_chunks">/global/geometric_chunks/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalglobal_caves">/global/global_caves/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalglobal_lattices">/global/global_lattices/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalglobal_scaffolds">/global/global_scaffolds/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalglobal_tubes">/global/global_tubes/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalgod_rays">/global/god_rays/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalgrind">/global/grind/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalpellet_fx">/global/pellet_fx/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalpound_slowdown">/global/pound_slowdown/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalscrape_effect">/global/scrape_effect/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalspiral_rise">/global/spiral_rise/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalthump_miss">/global/thump_miss/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#globalturn_fx">/global/turn_fx/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levels">/levels/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel2">/levels/Level2/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel3">/levels/Level3/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel4">/levels/Level4/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel5">/levels/Level5/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel6">/levels/Level6/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel7">/levels/Level7/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel8">/levels/Level8/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#levelslevel9">/levels/Level9/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#props">/props/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#skybox">/skybox/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ui">/ui/</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Magic Numbers</li>
+      <li class="breadcrumb-item active">Hashed File Names</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/hashed_file_names.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="hashed-file-names">Hashed File Names</h1>
+<p>For simplicity, the <code>.pc</code> file extension is excluded from the hashed file names.</p>
+<h2 id="objlib-files"><a href="../objlib_gen_structure/">.objlib Files</a></h2>
+<h3 id="_1"><code>/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>7ed74e41</code></td>
+<td>GFX Library</td>
+<td>debug_font.objlib</td>
+</tr>
+<tr>
+<td><code>7fe3b994</code></td>
+<td>GFX Library</td>
+<td>defaults.objlib</td>
+</tr>
+<tr>
+<td><code>888d0884</code></td>
+<td>GFX Library</td>
+<td>drool_splash.objlib</td>
+</tr>
+<tr>
+<td><code>bcd81051</code></td>
+<td>GFX Library</td>
+<td>drool_splash_openvr.objlib</td>
+</tr>
+<tr>
+<td><code>23c7b20b</code></td>
+<td>GFX Library</td>
+<td>global.objlib</td>
+</tr>
+<tr>
+<td><code>b366adb4</code></td>
+<td>Obj Library</td>
+<td>channels.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="boss"><code>/boss/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>43384088</code></td>
+<td>GFX Library</td>
+<td>crakhed_eye.objlib</td>
+</tr>
+<tr>
+<td><code>a643b287</code></td>
+<td>GFX Library</td>
+<td>crakhed_eye_pupil.objlib</td>
+</tr>
+<tr>
+<td><code>19257f54</code></td>
+<td>GFX Library</td>
+<td>ending_sequence.objlib</td>
+</tr>
+<tr>
+<td><code>26e37a88</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed1.objlib</td>
+</tr>
+<tr>
+<td><code>ec16293b</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed2.objlib</td>
+</tr>
+<tr>
+<td><code>1bd29af6</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed3.objlib</td>
+</tr>
+<tr>
+<td><code>224241e6</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed4.objlib</td>
+</tr>
+<tr>
+<td><code>2ee2a727</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed5.objlib</td>
+</tr>
+<tr>
+<td><code>71bffbd6</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed6.objlib</td>
+</tr>
+<tr>
+<td><code>6645d5a1</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed7.objlib</td>
+</tr>
+<tr>
+<td><code>ccfc8fe7</code></td>
+<td>GFX Library</td>
+<td>gate_crakhed_level8.objlib</td>
+</tr>
+<tr>
+<td><code>f0b9ee69</code></td>
+<td>GFX Library</td>
+<td>gate_pyramid.objlib</td>
+</tr>
+<tr>
+<td><code>a606d24</code></td>
+<td>GFX Library</td>
+<td>title_screen_pyramid.objlib</td>
+</tr>
+<tr>
+<td><code>1e3da7ec</code></td>
+<td>Sequin Library</td>
+<td>boss_1.objlib</td>
+</tr>
+<tr>
+<td><code>550eeaa6</code></td>
+<td>Sequin Library</td>
+<td>boss_2.objlib</td>
+</tr>
+<tr>
+<td><code>bb2af59f</code></td>
+<td>Sequin Library</td>
+<td>boss_3.objlib</td>
+</tr>
+<tr>
+<td><code>ab4185f4</code></td>
+<td>Sequin Library</td>
+<td>boss_5.objlib</td>
+</tr>
+<tr>
+<td><code>6c7c9d66</code></td>
+<td>Sequin Library</td>
+<td>boss_6.objlib</td>
+</tr>
+<tr>
+<td><code>15088a9e</code></td>
+<td>Sequin Library</td>
+<td>boss_6_b.objlib</td>
+</tr>
+<tr>
+<td><code>cd6c35b9</code></td>
+<td>Sequin Library</td>
+<td>boss_7.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_7"><code>/boss/boss_7/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>54521576</code></td>
+<td>GFX Library</td>
+<td>teeth.objlib</td>
+</tr>
+<tr>
+<td><code>34122579</code></td>
+<td>GFX Library</td>
+<td>teeth_entity_set.objlib</td>
+</tr>
+<tr>
+<td><code>68511411</code></td>
+<td>GFX Library</td>
+<td>teeth_tunnel.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_array"><code>/boss/boss_array/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>6aab2127</code></td>
+<td>GFX Library</td>
+<td>boss_array.objlib</td>
+</tr>
+<tr>
+<td><code>d22b91f4</code></td>
+<td>GFX Library</td>
+<td>boss_array_chunk.objlib</td>
+</tr>
+<tr>
+<td><code>c106438e</code></td>
+<td>GFX Library</td>
+<td>boss_array_segment.objlib</td>
+</tr>
+<tr>
+<td><code>eae8bdd1</code></td>
+<td>GFX Library</td>
+<td>boss_arrayfull.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_fingers"><code>/boss/boss_fingers/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2abe35d2</code></td>
+<td>GFX Library</td>
+<td>boss_2_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>47dc2cdf</code></td>
+<td>GFX Library</td>
+<td>boss_3_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>dc8032f6</code></td>
+<td>GFX Library</td>
+<td>boss_4_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>9ed0feba</code></td>
+<td>GFX Library</td>
+<td>boss_5_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>9eb8ef02</code></td>
+<td>GFX Library</td>
+<td>boss_6_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>15eee54a</code></td>
+<td>GFX Library</td>
+<td>boss_7_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>4b37f2c6</code></td>
+<td>GFX Library</td>
+<td>boss_8_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>7e3570e9</code></td>
+<td>GFX Library</td>
+<td>boss_9_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>d7341d77</code></td>
+<td>Sequin Library</td>
+<td>boss2_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>81408675</code></td>
+<td>Sequin Library</td>
+<td>boss3_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>f01949ac</code></td>
+<td>Sequin Library</td>
+<td>boss4_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>38802d68</code></td>
+<td>Sequin Library</td>
+<td>boss5_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>c9762f57</code></td>
+<td>Sequin Library</td>
+<td>boss6_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>eb1e3453</code></td>
+<td>Sequin Library</td>
+<td>boss7_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>67c1a201</code></td>
+<td>Sequin Library</td>
+<td>boss8_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>54afa127</code></td>
+<td>Sequin Library</td>
+<td>boss9_fingers.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_frac"><code>/boss/boss_frac/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e59f230f</code></td>
+<td>GFX Library</td>
+<td>gate_frac.objlib</td>
+</tr>
+<tr>
+<td><code>c35b249f</code></td>
+<td>Sequin Library</td>
+<td>boss_frac.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_jump"><code>/boss/boss_jump/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2cd0b23c</code></td>
+<td>GFX Library</td>
+<td>boss_jump.objlib</td>
+</tr>
+<tr>
+<td><code>16fb0b73</code></td>
+<td>GFX Library</td>
+<td>gate_jump.objlib</td>
+</tr>
+<tr>
+<td><code>7fa23e1f</code></td>
+<td>GFX Library</td>
+<td>spike.objlib</td>
+</tr>
+<tr>
+<td><code>afbaadad</code></td>
+<td>GFX Library</td>
+<td>spikes_bubbles.objlib</td>
+</tr>
+<tr>
+<td><code>73b8aef4</code></td>
+<td>Sequin Library</td>
+<td>trees.objlib</td>
+</tr>
+<tr>
+<td><code>1b0c4f34</code></td>
+<td>Sequin Library</td>
+<td>trees_a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_spiral"><code>/boss/boss_spiral/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>5024714e</code></td>
+<td>GFX Library</td>
+<td>gate_spiral.objlib</td>
+</tr>
+<tr>
+<td><code>1b0c24e5</code></td>
+<td>GFX Library</td>
+<td>spiral1.objlib</td>
+</tr>
+<tr>
+<td><code>9f00cf66</code></td>
+<td>GFX Library</td>
+<td>spiral_entity1.objlib</td>
+</tr>
+<tr>
+<td><code>d899a074</code></td>
+<td>GFX Library</td>
+<td>spiral_entity_sets.objlib</td>
+</tr>
+<tr>
+<td><code>15cd7d0c</code></td>
+<td>Sequin Library</td>
+<td>boss_spiral_starfish.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_spirograph"><code>/boss/boss_spirograph/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3e24534c</code></td>
+<td>GFX Library</td>
+<td>gate_spirograph.objlib</td>
+</tr>
+<tr>
+<td><code>fbc3e66f</code></td>
+<td>GFX Library</td>
+<td>spirograph_entity.objlib</td>
+</tr>
+<tr>
+<td><code>1c7defaf</code></td>
+<td>GFX Library</td>
+<td>spirograph_entity_sets.objlib</td>
+</tr>
+<tr>
+<td><code>114daa65</code></td>
+<td>Sequin Library</td>
+<td>boss_spirograph_starfish.objlib</td>
+</tr>
+<tr>
+<td><code>a7b4cd98</code></td>
+<td>Sequin Library</td>
+<td>boss_spirograph_starfish_small.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_tube"><code>/boss/boss_tube/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a04a0954</code></td>
+<td>GFX Library</td>
+<td>boss_tube.objlib</td>
+</tr>
+<tr>
+<td><code>eb7beca5</code></td>
+<td>GFX Library</td>
+<td>gate_tube.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossboss_tunnel"><code>/boss/boss_tunnel/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>17d00a8f</code></td>
+<td>GFX Library</td>
+<td>boss_tunnel.objlib</td>
+</tr>
+<tr>
+<td><code>28be3f2d</code></td>
+<td>GFX Library</td>
+<td>boss_tunnel_set.objlib</td>
+</tr>
+<tr>
+<td><code>1e82f63c</code></td>
+<td>GFX Library</td>
+<td>tunnel_segment.objlib</td>
+</tr>
+<tr>
+<td><code>ab89af8</code></td>
+<td>GFX Library</td>
+<td>tunnel_segments.objlib</td>
+</tr>
+<tr>
+<td><code>f65be57d</code></td>
+<td>Sequin Library</td>
+<td>boss_tunnel_starfish.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bosscrakhed_fingers"><code>/boss/crakhed_fingers/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>7015fe28</code></td>
+<td>GFX Library</td>
+<td>crakhed2_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>3c75b8f8</code></td>
+<td>GFX Library</td>
+<td>crakhed3_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>f306c1d1</code></td>
+<td>GFX Library</td>
+<td>crakhed4_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>50484abb</code></td>
+<td>GFX Library</td>
+<td>crakhed6_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>ec54d2c8</code></td>
+<td>GFX Library</td>
+<td>crakhed7_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>70675637</code></td>
+<td>GFX Library</td>
+<td>crakhed8_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>73613bed</code></td>
+<td>GFX Library</td>
+<td>crakhed9_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>800eb5c5</code></td>
+<td>GFX Library</td>
+<td>crakhed_5_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>15237870</code></td>
+<td>GFX Library</td>
+<td>crakhed_demo_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>c8e69347</code></td>
+<td>GFX Library</td>
+<td>crakhed_red_tentacle_set.objlib</td>
+</tr>
+<tr>
+<td><code>c1d894f7</code></td>
+<td>Sequin Library</td>
+<td>crakhed2_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>e587062e</code></td>
+<td>Sequin Library</td>
+<td>crakhed3_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>df3d2c59</code></td>
+<td>Sequin Library</td>
+<td>crakhed4_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>c616a9b</code></td>
+<td>Sequin Library</td>
+<td>crakhed5_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>283b2afc</code></td>
+<td>Sequin Library</td>
+<td>crakhed6_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>9d34d9cc</code></td>
+<td>Sequin Library</td>
+<td>crakhed7_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>15b6268f</code></td>
+<td>Sequin Library</td>
+<td>crakhed8_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>8a4174f2</code></td>
+<td>Sequin Library</td>
+<td>crakhed9_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>a35f967e</code></td>
+<td>Sequin Library</td>
+<td>crakhed9_fingers_optimized.objlib</td>
+</tr>
+<tr>
+<td><code>6cb7ee87</code></td>
+<td>Sequin Library</td>
+<td>crakhed_demo_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>cc62e099</code></td>
+<td>Sequin Library</td>
+<td>crakhed_red_tentacle.objlib</td>
+</tr>
+<tr>
+<td><code>9c19052b</code></td>
+<td>Sequin Library</td>
+<td>crakhed_red_tentacle_prop.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossgate_diamond"><code>/boss/gate_diamond/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>89b90981</code></td>
+<td>GFX Library</td>
+<td>checkpoint_diamond.objlib</td>
+</tr>
+<tr>
+<td><code>5ca234d7</code></td>
+<td>GFX Library</td>
+<td>gate_3_stage_diamond.objlib</td>
+</tr>
+<tr>
+<td><code>718c382e</code></td>
+<td>GFX Library</td>
+<td>gate_ring_diamond.objlib</td>
+</tr>
+<tr>
+<td><code>39fffef2</code></td>
+<td>GFX Library</td>
+<td>zillapede_boss2.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bossgate_triangle"><code>/boss/gate_triangle/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3c179df5</code></td>
+<td>GFX Library</td>
+<td>checkpoint_triangle.objlib</td>
+</tr>
+<tr>
+<td><code>19956885</code></td>
+<td>GFX Library</td>
+<td>gate_3_stage_triangle.objlib</td>
+</tr>
+<tr>
+<td><code>e7a15f0d</code></td>
+<td>GFX Library</td>
+<td>gate_ring_triangle.objlib</td>
+</tr>
+<tr>
+<td><code>c4f25dbf</code></td>
+<td>GFX Library</td>
+<td>triangle_boss.objlib</td>
+</tr>
+<tr>
+<td><code>48db15e5</code></td>
+<td>GFX Library</td>
+<td>triangle_boss_pound_tutorial.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decorators"><code>/decorators/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c833190c</code></td>
+<td>GFX Library</td>
+<td>boss_shield.objlib</td>
+</tr>
+<tr>
+<td><code>5fd92ea0</code></td>
+<td>GFX Library</td>
+<td>checkpoint.objlib</td>
+</tr>
+<tr>
+<td><code>a8543f1</code></td>
+<td>GFX Library</td>
+<td>ducker.objlib</td>
+</tr>
+<tr>
+<td><code>3cc8d88d</code></td>
+<td>GFX Library</td>
+<td>phrase_crak.objlib</td>
+</tr>
+<tr>
+<td><code>23c74249</code></td>
+<td>GFX Library</td>
+<td>rail_switch.objlib</td>
+</tr>
+<tr>
+<td><code>6a397d7b</code></td>
+<td>GFX Library</td>
+<td>sentry.objlib</td>
+</tr>
+<tr>
+<td><code>939ece45</code></td>
+<td>GFX Library</td>
+<td>thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><code>9a4d97b2</code></td>
+<td>GFX Library</td>
+<td>thump_grindable_multi.objlib</td>
+</tr>
+<tr>
+<td><code>450aa3d5</code></td>
+<td>GFX Library</td>
+<td>thump_rails.objlib</td>
+</tr>
+<tr>
+<td><code>f0b42963</code></td>
+<td>GFX Library</td>
+<td>turn.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsbarriers"><code>/decorators/barriers/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f5fa1a5b</code></td>
+<td>GFX Library</td>
+<td>barrier_rail.objlib</td>
+</tr>
+<tr>
+<td><code>4d45b20f</code></td>
+<td>GFX Library</td>
+<td>rail.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsdecorative"><code>/decorators/decorative/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b85626db</code></td>
+<td>GFX Library</td>
+<td>millipede_half_decorative.objlib</td>
+</tr>
+<tr>
+<td><code>c08cfee6</code></td>
+<td>GFX Library</td>
+<td>millipede_half_decorative_b.objlib</td>
+</tr>
+<tr>
+<td><code>3dade038</code></td>
+<td>GFX Library</td>
+<td>pulse_crest.objlib</td>
+</tr>
+<tr>
+<td><code>da80a784</code></td>
+<td>GFX Library</td>
+<td>ring_pulse.objlib</td>
+</tr>
+<tr>
+<td><code>76e4336d</code></td>
+<td>GFX Library</td>
+<td>ring_pulse_checkpoint.objlib</td>
+</tr>
+<tr>
+<td><code>a9d871cd</code></td>
+<td>Sequin Library</td>
+<td>fingers_rails.objlib</td>
+</tr>
+<tr>
+<td><code>1e280857</code></td>
+<td>Sequin Library</td>
+<td>fingers_rails_gate.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsdecorativesequins"><code>/decorators/decorative/sequins/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8b182779</code></td>
+<td>Sequin Library</td>
+<td>millipede_half_decorative.objlib</td>
+</tr>
+<tr>
+<td><code>ad654876</code></td>
+<td>Sequin Library</td>
+<td>millipede_half_decorative_b.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsgameplay_objects"><code>/decorators/gameplay_objects/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ef1068d9</code></td>
+<td>Sequin Library</td>
+<td>boss_shield_sequin.objlib</td>
+</tr>
+<tr>
+<td><code>69e6e7e2</code></td>
+<td>Sequin Library</td>
+<td>ducker_ring_sequin.objlib</td>
+</tr>
+<tr>
+<td><code>216114d2</code></td>
+<td>Sequin Library</td>
+<td>sentry_sequin.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsjump_high"><code>/decorators/jump_high/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1a98cd1d</code></td>
+<td>GFX Library</td>
+<td>jump_high_big_trees_set.objlib</td>
+</tr>
+<tr>
+<td><code>24e4dd34</code></td>
+<td>GFX Library</td>
+<td>jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><code>9bd111dc</code></td>
+<td>GFX Library</td>
+<td>jump_high_spikes.objlib</td>
+</tr>
+<tr>
+<td><code>58afd38c</code></td>
+<td>GFX Library</td>
+<td>red_shockwave.objlib</td>
+</tr>
+<tr>
+<td><code>be0a515</code></td>
+<td>Sequin Library</td>
+<td>jump_high_big_trees.objlib</td>
+</tr>
+<tr>
+<td><code>48a0c649</code></td>
+<td>Sequin Library</td>
+<td>jump_high_trees.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsjumper"><code>/decorators/jumper/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c8819a11</code></td>
+<td>GFX Library</td>
+<td>jumper_blisters.objlib</td>
+</tr>
+<tr>
+<td><code>c2d8d2c</code></td>
+<td>GFX Library</td>
+<td>jumper_collide.objlib</td>
+</tr>
+<tr>
+<td><code>3fec84a8</code></td>
+<td>GFX Library</td>
+<td>jumper_set.objlib</td>
+</tr>
+<tr>
+<td><code>17243601</code></td>
+<td>Sequin Library</td>
+<td>jumper_trees.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorslevel_fingers"><code>/decorators/level_fingers/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b39407c5</code></td>
+<td>GFX Library</td>
+<td>demo_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>f517a916</code></td>
+<td>GFX Library</td>
+<td>level2_angled_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>9a9d7e6e</code></td>
+<td>GFX Library</td>
+<td>level2_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>5ab63e90</code></td>
+<td>GFX Library</td>
+<td>level2b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>97d4562c</code></td>
+<td>GFX Library</td>
+<td>level2c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>cd17b6f4</code></td>
+<td>GFX Library</td>
+<td>level3_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>15f003c0</code></td>
+<td>GFX Library</td>
+<td>level3b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>e920846c</code></td>
+<td>GFX Library</td>
+<td>level3c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>c57d37b1</code></td>
+<td>GFX Library</td>
+<td>level3d_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>18165ac</code></td>
+<td>GFX Library</td>
+<td>level4_small_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>bcf1025d</code></td>
+<td>GFX Library</td>
+<td>level4b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>bdb9a378</code></td>
+<td>GFX Library</td>
+<td>level4c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>db0b03b4</code></td>
+<td>GFX Library</td>
+<td>level5b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>b8ee1192</code></td>
+<td>GFX Library</td>
+<td>level5c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>c63df3f8</code></td>
+<td>GFX Library</td>
+<td>level5d_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>86c46b67</code></td>
+<td>GFX Library</td>
+<td>level5e_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>26d77527</code></td>
+<td>GFX Library</td>
+<td>level6b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>1166bda8</code></td>
+<td>GFX Library</td>
+<td>level6c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>e000a7a5</code></td>
+<td>GFX Library</td>
+<td>level7_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>d2f0d6d1</code></td>
+<td>GFX Library</td>
+<td>level7b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>f22216ed</code></td>
+<td>GFX Library</td>
+<td>level7c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>506bbd55</code></td>
+<td>GFX Library</td>
+<td>level8_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>917d7a9d</code></td>
+<td>GFX Library</td>
+<td>level8b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>6719bb5d</code></td>
+<td>GFX Library</td>
+<td>level9_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>e74d681a</code></td>
+<td>GFX Library</td>
+<td>level9b_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>fcc8a3a6</code></td>
+<td>GFX Library</td>
+<td>level9c_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>8519d8b7</code></td>
+<td>GFX Library</td>
+<td>level9d_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>63cff041</code></td>
+<td>GFX Library</td>
+<td>level_tree1_angled_set.objlib</td>
+</tr>
+<tr>
+<td><code>6b4d43e5</code></td>
+<td>GFX Library</td>
+<td>level_tree1_lattice_set.objlib</td>
+</tr>
+<tr>
+<td><code>372cf62e</code></td>
+<td>GFX Library</td>
+<td>level_tree1_latticeb_set.objlib</td>
+</tr>
+<tr>
+<td><code>516325d8</code></td>
+<td>GFX Library</td>
+<td>level_tree1_set.objlib</td>
+</tr>
+<tr>
+<td><code>767e6881</code></td>
+<td>GFX Library</td>
+<td>level_tree1_set_glass.objlib</td>
+</tr>
+<tr>
+<td><code>ac4abd71</code></td>
+<td>GFX Library</td>
+<td>level_tree2_set.objlib</td>
+</tr>
+<tr>
+<td><code>bd99986d</code></td>
+<td>GFX Library</td>
+<td>level_tree3_set.objlib</td>
+</tr>
+<tr>
+<td><code>b4b4cf0d</code></td>
+<td>GFX Library</td>
+<td>level_tree3_transparent_set.objlib</td>
+</tr>
+<tr>
+<td><code>728522db</code></td>
+<td>GFX Library</td>
+<td>level_tree4_set.objlib</td>
+</tr>
+<tr>
+<td><code>f454b65a</code></td>
+<td>GFX Library</td>
+<td>level_tree5_set.objlib</td>
+</tr>
+<tr>
+<td><code>f10adf88</code></td>
+<td>GFX Library</td>
+<td>level_tree8_set.objlib</td>
+</tr>
+<tr>
+<td><code>10576d66</code></td>
+<td>GFX Library</td>
+<td>spiral_fingers_set.objlib</td>
+</tr>
+<tr>
+<td><code>3f023126</code></td>
+<td>GFX Library</td>
+<td>Sequin Library demo_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>3fd5dd0c</code></td>
+<td>GFX Library</td>
+<td>level2_angled_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>cafb2bb2</code></td>
+<td>GFX Library</td>
+<td>level2_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>dea9429f</code></td>
+<td>GFX Library</td>
+<td>level2b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>c2da47ab</code></td>
+<td>GFX Library</td>
+<td>level2c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>4212b892</code></td>
+<td>GFX Library</td>
+<td>level3_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>33f10277</code></td>
+<td>GFX Library</td>
+<td>level3b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>9e90b25</code></td>
+<td>GFX Library</td>
+<td>level3c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>b369047e</code></td>
+<td>GFX Library</td>
+<td>level3d_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>67a881df</code></td>
+<td>GFX Library</td>
+<td>level4_small_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>3eacce0e</code></td>
+<td>GFX Library</td>
+<td>level4b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>308b1286</code></td>
+<td>GFX Library</td>
+<td>level4c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>643ec53d</code></td>
+<td>GFX Library</td>
+<td>level5b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>f17fb96b</code></td>
+<td>GFX Library</td>
+<td>level5c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>92e735dd</code></td>
+<td>GFX Library</td>
+<td>level5e_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>4da31c74</code></td>
+<td>GFX Library</td>
+<td>level5f_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>15628b50</code></td>
+<td>GFX Library</td>
+<td>level6b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>8d535fb9</code></td>
+<td>GFX Library</td>
+<td>level6c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>747b7b93</code></td>
+<td>GFX Library</td>
+<td>level7_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>c64c2a4e</code></td>
+<td>GFX Library</td>
+<td>level7b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>2db423cd</code></td>
+<td>GFX Library</td>
+<td>level7c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>245c5390</code></td>
+<td>GFX Library</td>
+<td>level7d_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>75bcb1bb</code></td>
+<td>GFX Library</td>
+<td>level8_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>8ef1be9f</code></td>
+<td>GFX Library</td>
+<td>level8b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>29a8896c</code></td>
+<td>GFX Library</td>
+<td>level9_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>48e9803b</code></td>
+<td>GFX Library</td>
+<td>level9b_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>57520268</code></td>
+<td>GFX Library</td>
+<td>level9c_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>7e96d339</code></td>
+<td>GFX Library</td>
+<td>level9d_fingers.objlib</td>
+</tr>
+<tr>
+<td><code>eb0dac07</code></td>
+<td>GFX Library</td>
+<td>level_tree1.objlib</td>
+</tr>
+<tr>
+<td><code>1960ccd</code></td>
+<td>GFX Library</td>
+<td>level_tree1_angled.objlib</td>
+</tr>
+<tr>
+<td><code>2dded059</code></td>
+<td>GFX Library</td>
+<td>level_tree1_glass.objlib</td>
+</tr>
+<tr>
+<td><code>a72eba03</code></td>
+<td>GFX Library</td>
+<td>level_tree1_lattice.objlib</td>
+</tr>
+<tr>
+<td><code>c62ede88</code></td>
+<td>GFX Library</td>
+<td>level_tree1_latticeb.objlib</td>
+</tr>
+<tr>
+<td><code>eca16ea6</code></td>
+<td>GFX Library</td>
+<td>level_tree2.objlib</td>
+</tr>
+<tr>
+<td><code>8e7938b5</code></td>
+<td>GFX Library</td>
+<td>level_tree3.objlib</td>
+</tr>
+<tr>
+<td><code>5a5830c9</code></td>
+<td>GFX Library</td>
+<td>level_tree3_transparent.objlib</td>
+</tr>
+<tr>
+<td><code>7eae46fc</code></td>
+<td>GFX Library</td>
+<td>level_tree4.objlib</td>
+</tr>
+<tr>
+<td><code>9f24ea6d</code></td>
+<td>GFX Library</td>
+<td>level_tree5_long_straight.objlib</td>
+</tr>
+<tr>
+<td><code>43d50ae8</code></td>
+<td>GFX Library</td>
+<td>level_tree8.objlib</td>
+</tr>
+<tr>
+<td><code>d8d17022</code></td>
+<td>GFX Library</td>
+<td>spiral_fingers.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsobstacleswurms"><code>/decorators/obstacles/wurms/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>7e6c6513</code></td>
+<td>GFX Library</td>
+<td>millipede.objlib</td>
+</tr>
+<tr>
+<td><code>69f909b0</code></td>
+<td>GFX Library</td>
+<td>millipede_half.objlib</td>
+</tr>
+<tr>
+<td><code>5ca62107</code></td>
+<td>GFX Library</td>
+<td>millipede_quarter.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decoratorsobstacleswurmssequins"><code>/decorators/obstacles/wurms/sequins/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>6bec7cb9</code></td>
+<td>Sequin Library</td>
+<td>millipede_half.objlib</td>
+</tr>
+<tr>
+<td><code>80360d0a</code></td>
+<td>Sequin Library</td>
+<td>millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><code>83eab8b4</code></td>
+<td>Sequin Library</td>
+<td>millipede_straight.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="entity"><code>/entity/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fbb90251</code></td>
+<td>GFX Library</td>
+<td>ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><code>c2073ffc</code></td>
+<td>GFX Library</td>
+<td>damage.objlib</td>
+</tr>
+<tr>
+<td><code>1b02e3b3</code></td>
+<td>GFX Library</td>
+<td>decorative_rails.objlib</td>
+</tr>
+<tr>
+<td><code>884dfdf</code></td>
+<td>GFX Library</td>
+<td>millipede_decorative.objlib</td>
+</tr>
+<tr>
+<td><code>232809d2</code></td>
+<td>GFX Library</td>
+<td>ring_pulse_fx.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global"><code>/global/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1d531c9a</code></td>
+<td>GFX Library</td>
+<td>aurora_cube.objlib</td>
+</tr>
+<tr>
+<td><code>dad9b289</code></td>
+<td>GFX Library</td>
+<td>bounce_barrier.objlib</td>
+</tr>
+<tr>
+<td><code>dfafba45</code></td>
+<td>GFX Library</td>
+<td>carve.objlib</td>
+</tr>
+<tr>
+<td><code>25f6dc8c</code></td>
+<td>GFX Library</td>
+<td>chrome_aurora_tex_256.objlib</td>
+</tr>
+<tr>
+<td><code>ca5c5aad</code></td>
+<td>GFX Library</td>
+<td>chrome_aurora_tex_64.objlib</td>
+</tr>
+<tr>
+<td><code>893f06f6</code></td>
+<td>GFX Library</td>
+<td>chrome_aurora_tex_intensified.objlib</td>
+</tr>
+<tr>
+<td><code>bd3920f3</code></td>
+<td>GFX Library</td>
+<td>chrome_small_highlight.objlib</td>
+</tr>
+<tr>
+<td><code>7097f7ac</code></td>
+<td>GFX Library</td>
+<td>chrome_tex_128.objlib</td>
+</tr>
+<tr>
+<td><code>f03502a6</code></td>
+<td>GFX Library</td>
+<td>chrome_tex_256.objlib</td>
+</tr>
+<tr>
+<td><code>4eb2dc33</code></td>
+<td>GFX Library</td>
+<td>damage_sparks.objlib</td>
+</tr>
+<tr>
+<td><code>5b64d798</code></td>
+<td>GFX Library</td>
+<td>data_streaks_decorator.objlib</td>
+</tr>
+<tr>
+<td><code>144f5dc9</code></td>
+<td>GFX Library</td>
+<td>death_impact_explosion.objlib</td>
+</tr>
+<tr>
+<td><code>211bcf23</code></td>
+<td>GFX Library</td>
+<td>ducker_splosion.objlib</td>
+</tr>
+<tr>
+<td><code>d8c8f574</code></td>
+<td>GFX Library</td>
+<td>dust.objlib</td>
+</tr>
+<tr>
+<td><code>4730abd</code></td>
+<td>GFX Library</td>
+<td>explosion_sparks.objlib</td>
+</tr>
+<tr>
+<td><code>e5ce0de7</code></td>
+<td>GFX Library</td>
+<td>fall_end.objlib</td>
+</tr>
+<tr>
+<td><code>1a37f945</code></td>
+<td>GFX Library</td>
+<td>fall_start.objlib</td>
+</tr>
+<tr>
+<td><code>6b9bde54</code></td>
+<td>GFX Library</td>
+<td>flutter_end.objlib</td>
+</tr>
+<tr>
+<td><code>b9fa2a14</code></td>
+<td>GFX Library</td>
+<td>flutter_start.objlib</td>
+</tr>
+<tr>
+<td><code>2705cbf</code></td>
+<td>GFX Library</td>
+<td>gate_damage_fx.objlib</td>
+</tr>
+<tr>
+<td><code>2f2aeb47</code></td>
+<td>GFX Library</td>
+<td>gate_damage_fx_crakhed.objlib</td>
+</tr>
+<tr>
+<td><code>70c23598</code></td>
+<td>GFX Library</td>
+<td>geo_explosion.objlib</td>
+</tr>
+<tr>
+<td><code>f1064cc9</code></td>
+<td>GFX Library</td>
+<td>geo_explosion_millipedes.objlib</td>
+</tr>
+<tr>
+<td><code>7851d0b4</code></td>
+<td>GFX Library</td>
+<td>global_tunnels.objlib</td>
+</tr>
+<tr>
+<td><code>ad6a22eb</code></td>
+<td>GFX Library</td>
+<td>grind.objlib</td>
+</tr>
+<tr>
+<td><code>5677342e</code></td>
+<td>GFX Library</td>
+<td>grindable_splosion.objlib</td>
+</tr>
+<tr>
+<td><code>389cfe5e</code></td>
+<td>GFX Library</td>
+<td>hd_vibration.objlib</td>
+</tr>
+<tr>
+<td><code>a7589ab7</code></td>
+<td>GFX Library</td>
+<td>jump.objlib</td>
+</tr>
+<tr>
+<td><code>fcfd083a</code></td>
+<td>GFX Library</td>
+<td>lane_switch_birth.objlib</td>
+</tr>
+<tr>
+<td><code>a384e327</code></td>
+<td>GFX Library</td>
+<td>laser.objlib</td>
+</tr>
+<tr>
+<td><code>23320041</code></td>
+<td>GFX Library</td>
+<td>millipede_hit.objlib</td>
+</tr>
+<tr>
+<td><code>81573eb6</code></td>
+<td>GFX Library</td>
+<td>postprocs.objlib</td>
+</tr>
+<tr>
+<td><code>d483962d</code></td>
+<td>GFX Library</td>
+<td>pound_hit.objlib</td>
+</tr>
+<tr>
+<td><code>491aa054</code></td>
+<td>GFX Library</td>
+<td>pound_miss.objlib</td>
+</tr>
+<tr>
+<td><code>b44a820a</code></td>
+<td>GFX Library</td>
+<td>pound_start.objlib</td>
+</tr>
+<tr>
+<td><code>3533b2c3</code></td>
+<td>GFX Library</td>
+<td>psychedelic_textures.objlib</td>
+</tr>
+<tr>
+<td><code>8116ca5d</code></td>
+<td>GFX Library</td>
+<td>pulser_missplosion.objlib</td>
+</tr>
+<tr>
+<td><code>2fd13a52</code></td>
+<td>GFX Library</td>
+<td>rails.objlib</td>
+</tr>
+<tr>
+<td><code>38940c8e</code></td>
+<td>GFX Library</td>
+<td>scrape.objlib</td>
+</tr>
+<tr>
+<td><code>2395fe25</code></td>
+<td>GFX Library</td>
+<td>sentry_death.objlib</td>
+</tr>
+<tr>
+<td><code>9ed1c8e0</code></td>
+<td>GFX Library</td>
+<td>sentry_tracker.objlib</td>
+</tr>
+<tr>
+<td><code>52b9a22</code></td>
+<td>GFX Library</td>
+<td>shatter.objlib</td>
+</tr>
+<tr>
+<td><code>67b3b5a7</code></td>
+<td>GFX Library</td>
+<td>shatter_coin.objlib</td>
+</tr>
+<tr>
+<td><code>7992017b</code></td>
+<td>GFX Library</td>
+<td>shatter_decorator.objlib</td>
+</tr>
+<tr>
+<td><code>dcb48ce9</code></td>
+<td>GFX Library</td>
+<td>shatter_shield.objlib</td>
+</tr>
+<tr>
+<td><code>a2385929</code></td>
+<td>GFX Library</td>
+<td>smoke_decorator.objlib</td>
+</tr>
+<tr>
+<td><code>ee9982e0</code></td>
+<td>GFX Library</td>
+<td>thump_grind.objlib</td>
+</tr>
+<tr>
+<td><code>d07a55c</code></td>
+<td>GFX Library</td>
+<td>thump_hit.objlib</td>
+</tr>
+<tr>
+<td><code>b049191b</code></td>
+<td>GFX Library</td>
+<td>thump_miss.objlib</td>
+</tr>
+<tr>
+<td><code>5cd695e4</code></td>
+<td>GFX Library</td>
+<td>thump_swing.objlib</td>
+</tr>
+<tr>
+<td><code>c21bb512</code></td>
+<td>GFX Library</td>
+<td>turn_hit.objlib</td>
+</tr>
+<tr>
+<td><code>be20b2ea</code></td>
+<td>GFX Library</td>
+<td>turn_hit_shockwaves.objlib</td>
+</tr>
+<tr>
+<td><code>ae1e5179</code></td>
+<td>Obj Library</td>
+<td>conditions.objlib</td>
+</tr>
+<tr>
+<td><code>4764c482</code></td>
+<td>Obj Library</td>
+<td>config.objlib</td>
+</tr>
+<tr>
+<td><code>914f191b</code></td>
+<td>Obj Library</td>
+<td>dissonant_bursts.objlib</td>
+</tr>
+<tr>
+<td><code>c75dbfd3</code></td>
+<td>Obj Library</td>
+<td>french_horn_chords.objlib</td>
+</tr>
+<tr>
+<td><code>b11a8dc4</code></td>
+<td>Obj Library</td>
+<td>french_horn_notes.objlib</td>
+</tr>
+<tr>
+<td><code>7ff61b49</code></td>
+<td>Obj Library</td>
+<td>french_horn_swells.objlib</td>
+</tr>
+<tr>
+<td><code>a2fa767d</code></td>
+<td>Obj Library</td>
+<td>french_horn_swells_short.objlib</td>
+</tr>
+<tr>
+<td><code>2580c0a8</code></td>
+<td>Obj Library</td>
+<td>global_drones.objlib</td>
+</tr>
+<tr>
+<td><code>5d601e95</code></td>
+<td>Obj Library</td>
+<td>gongs.objlib</td>
+</tr>
+<tr>
+<td><code>4d51fced</code></td>
+<td>Obj Library</td>
+<td>rises.objlib</td>
+</tr>
+<tr>
+<td><code>a2b4e667</code></td>
+<td>Obj Library</td>
+<td>rises_once.objlib</td>
+</tr>
+<tr>
+<td><code>c63c39c1</code></td>
+<td>Obj Library</td>
+<td>swooshes.objlib</td>
+</tr>
+<tr>
+<td><code>a7ee0d61</code></td>
+<td>Obj Library</td>
+<td>tunnel_sfx.objlib</td>
+</tr>
+<tr>
+<td><code>64df9ca0</code></td>
+<td>Obj Library</td>
+<td>tunnel_whooshes.objlib</td>
+</tr>
+<tr>
+<td><code>ae6469be</code></td>
+<td>Obj Library</td>
+<td>vr_playspace.objlib</td>
+</tr>
+<tr>
+<td><code>cd2c1ec</code></td>
+<td>Avatar Library</td>
+<td>avatar.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalambient_decorators"><code>/global/ambient_decorators/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ff4331aa</code></td>
+<td>GFX Library</td>
+<td>aurora_decorator.objlib</td>
+</tr>
+<tr>
+<td><code>94afcf05</code></td>
+<td>GFX Library</td>
+<td>boss_smoke.objlib</td>
+</tr>
+<tr>
+<td><code>5e627466</code></td>
+<td>GFX Library</td>
+<td>glass_shard.objlib</td>
+</tr>
+<tr>
+<td><code>18ea9401</code></td>
+<td>GFX Library</td>
+<td>glass_shatter.objlib</td>
+</tr>
+<tr>
+<td><code>18d3ef14</code></td>
+<td>GFX Library</td>
+<td>pyramid.objlib</td>
+</tr>
+<tr>
+<td><code>fe938efd</code></td>
+<td>GFX Library</td>
+<td>speed_streak.objlib</td>
+</tr>
+<tr>
+<td><code>991adb7a</code></td>
+<td>GFX Library</td>
+<td>stalactites.objlib</td>
+</tr>
+<tr>
+<td><code>b7227502</code></td>
+<td>GFX Library</td>
+<td>twirlies.objlib</td>
+</tr>
+<tr>
+<td><code>a264164b</code></td>
+<td>GFX Library</td>
+<td>twirlies_burst.objlib</td>
+</tr>
+<tr>
+<td><code>9dc87556</code></td>
+<td>GFX Library</td>
+<td>twirly.objlib</td>
+</tr>
+<tr>
+<td><code>4cb20bae</code></td>
+<td>GFX Library</td>
+<td>vortex_decorator1.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalboss_shield"><code>/global/boss_shield/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>17383211</code></td>
+<td>GFX Library</td>
+<td>boss_shield_sparks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globaldamage_flash"><code>/global/damage_flash/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9a8a35b0</code></td>
+<td>GFX Library</td>
+<td>damage_flash.objlib</td>
+</tr>
+<tr>
+<td><code>a39dda6b</code></td>
+<td>GFX Library</td>
+<td>spike.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalelectric_effect"><code>/global/electric_effect/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8bab99c3</code></td>
+<td>GFX Library</td>
+<td>damage_electric.objlib</td>
+</tr>
+<tr>
+<td><code>733ae127</code></td>
+<td>GFX Library</td>
+<td>electric_effects.objlib</td>
+</tr>
+<tr>
+<td><code>ddad1eb9</code></td>
+<td>Sequin Library</td>
+<td>electric_effect.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalending_sequence"><code>/global/ending_sequence/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>84738889</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_effect.objlib</td>
+</tr>
+<tr>
+<td><code>ea8d5c9e</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_effect_final_scene.objlib</td>
+</tr>
+<tr>
+<td><code>ddba890e</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_effect_starfish.objlib</td>
+</tr>
+<tr>
+<td><code>e63b2937</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_shard.objlib</td>
+</tr>
+<tr>
+<td><code>12af8f8b</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_shards.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalexplosion_spikes"><code>/global/explosion_spikes/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dae49788</code></td>
+<td>GFX Library</td>
+<td>explosion_spike.objlib</td>
+</tr>
+<tr>
+<td><code>59d1652d</code></td>
+<td>GFX Library</td>
+<td>explosion_spike_boss_shield.objlib</td>
+</tr>
+<tr>
+<td><code>251e520e</code></td>
+<td>GFX Library</td>
+<td>explosion_spike_thump.objlib</td>
+</tr>
+<tr>
+<td><code>8f0140b8</code></td>
+<td>GFX Library</td>
+<td>explosion_spikes.objlib</td>
+</tr>
+<tr>
+<td><code>d99bef4b</code></td>
+<td>GFX Library</td>
+<td>explosion_spikes_boss_shield.objlib</td>
+</tr>
+<tr>
+<td><code>911855a0</code></td>
+<td>GFX Library</td>
+<td>explosion_spikes_sphere.objlib</td>
+</tr>
+<tr>
+<td><code>81ade1f2</code></td>
+<td>GFX Library</td>
+<td>explosion_spikes_thump.objlib</td>
+</tr>
+<tr>
+<td><code>1adc3db3</code></td>
+<td>GFX Library</td>
+<td>laser_spike.objlib</td>
+</tr>
+<tr>
+<td><code>7ee3a332</code></td>
+<td>GFX Library</td>
+<td>laser_spikes.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalgeometric_chunks"><code>/global/geometric_chunks/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>42ee3d0a</code></td>
+<td>GFX Library</td>
+<td>geometric_chunk.objlib</td>
+</tr>
+<tr>
+<td><code>3e95ac87</code></td>
+<td>GFX Library</td>
+<td>geometric_chunks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalglobal_caves"><code>/global/global_caves/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>857c4f49</code></td>
+<td>GFX Library</td>
+<td>global_caves.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalglobal_lattices"><code>/global/global_lattices/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8debd826</code></td>
+<td>GFX Library</td>
+<td>global_lattices.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalglobal_scaffolds"><code>/global/global_scaffolds/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a79dcd11</code></td>
+<td>GFX Library</td>
+<td>scaffolds.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalglobal_tubes"><code>/global/global_tubes/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f0d6b122</code></td>
+<td>GFX Library</td>
+<td>global_tubes.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalgod_rays"><code>/global/god_rays/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>68b0618a</code></td>
+<td>GFX Library</td>
+<td>ending_sequence_rays.objlib</td>
+</tr>
+<tr>
+<td><code>40144166</code></td>
+<td>GFX Library</td>
+<td>eye_ray.objlib</td>
+</tr>
+<tr>
+<td><code>a51ae2fb</code></td>
+<td>GFX Library</td>
+<td>god_ray.objlib</td>
+</tr>
+<tr>
+<td><code>ed26cfad</code></td>
+<td>GFX Library</td>
+<td>god_ray_crakhed.objlib</td>
+</tr>
+<tr>
+<td><code>55a3eae9</code></td>
+<td>GFX Library</td>
+<td>god_rays_bonus_thump.objlib</td>
+</tr>
+<tr>
+<td><code>553a04c3</code></td>
+<td>GFX Library</td>
+<td>god_rays_crakhed.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalgrind"><code>/global/grind/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>7562d428</code></td>
+<td>GFX Library</td>
+<td>grind_streak.objlib</td>
+</tr>
+<tr>
+<td><code>c2ea0ed6</code></td>
+<td>GFX Library</td>
+<td>grind_streaks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalpellet_fx"><code>/global/pellet_fx/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>d729788c</code></td>
+<td>GFX Library</td>
+<td>pellet_activated.objlib</td>
+</tr>
+<tr>
+<td><code>6521dcc9</code></td>
+<td>GFX Library</td>
+<td>pellet_activation_shards.objlib</td>
+</tr>
+<tr>
+<td><code>fc0eb4ac</code></td>
+<td>GFX Library</td>
+<td>pellet_pulse_entity.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalpound_slowdown"><code>/global/pound_slowdown/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>d0f1c8d4</code></td>
+<td>GFX Library</td>
+<td>pound_slowdown_spark.objlib</td>
+</tr>
+<tr>
+<td><code>85d8df14</code></td>
+<td>GFX Library</td>
+<td>pound_slowdown_sparks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalscrape_effect"><code>/global/scrape_effect/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f13c27d7</code></td>
+<td>GFX Library</td>
+<td>shard_segment.objlib</td>
+</tr>
+<tr>
+<td><code>512ac3a6</code></td>
+<td>GFX Library</td>
+<td>spark_segment.objlib</td>
+</tr>
+<tr>
+<td><code>4993b383</code></td>
+<td>GFX Library</td>
+<td>sparks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalspiral_rise"><code>/global/spiral_rise/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8a88f8b8</code></td>
+<td>GFX Library</td>
+<td>spiral_pulse.objlib</td>
+</tr>
+<tr>
+<td><code>565b5752</code></td>
+<td>GFX Library</td>
+<td>spiral_rise.objlib</td>
+</tr>
+<tr>
+<td><code>8b8593b2</code></td>
+<td>GFX Library</td>
+<td>spiral_risers.objlib</td>
+</tr>
+<tr>
+<td><code>f19f2904</code></td>
+<td>GFX Library</td>
+<td>spiral_vortex.objlib</td>
+</tr>
+<tr>
+<td><code>81b46f33</code></td>
+<td>GFX Library</td>
+<td>spiral_vortices.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalthump_miss"><code>/global/thump_miss/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f1f4d42</code></td>
+<td>GFX Library</td>
+<td>thump_miss_sparks.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalturn_fx"><code>/global/turn_fx/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f0e6dd8e</code></td>
+<td>GFX Library</td>
+<td>turn_hit_shards.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levels"><code>/levels/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>673863f9</code></td>
+<td>Level Library</td>
+<td>demo.objlib</td>
+</tr>
+<tr>
+<td><code>d0d6149c</code></td>
+<td>Level Library</td>
+<td>title_screen.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel2"><code>/levels/Level2/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b2455736</code></td>
+<td>Level Library</td>
+<td>level_2a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel3"><code>/levels/Level3/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c058a9a</code></td>
+<td>Level Library</td>
+<td>level_3a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel4"><code>/levels/Level4/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e0c51024</code></td>
+<td>Level Library</td>
+<td>level_4a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel5"><code>/levels/Level5/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b201991c</code></td>
+<td>Level Library</td>
+<td>level_5a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel6"><code>/levels/Level6/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>5a82f017</code></td>
+<td>Level Library</td>
+<td>level_6.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel7"><code>/levels/Level7/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9af0e3cc</code></td>
+<td>Level Library</td>
+<td>level_7a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel8"><code>/levels/Level8/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>88d344d4</code></td>
+<td>Level Library</td>
+<td>level_8a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="levelslevel9"><code>/levels/Level9/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>30291331</code></td>
+<td>Level Library</td>
+<td>level_9a.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="props"><code>/props/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>85f4789a</code></td>
+<td>GFX Library</td>
+<td>checkpoint.objlib</td>
+</tr>
+<tr>
+<td><code>82623d2c</code></td>
+<td>GFX Library</td>
+<td>gate_3_stage.objlib</td>
+</tr>
+<tr>
+<td><code>7ec1280e</code></td>
+<td>GFX Library</td>
+<td>gate_3_stage_cheap.objlib</td>
+</tr>
+<tr>
+<td><code>f9490b56</code></td>
+<td>GFX Library</td>
+<td>gate_boss.objlib</td>
+</tr>
+<tr>
+<td><code>af7bb6b2</code></td>
+<td>GFX Library</td>
+<td>gate_mouth.objlib</td>
+</tr>
+<tr>
+<td><code>ceb48ba3</code></td>
+<td>GFX Library</td>
+<td>gate_ring.objlib</td>
+</tr>
+<tr>
+<td><code>4a2dacd4</code></td>
+<td>Sequin Library</td>
+<td>checkpoint_tentacles.objlib</td>
+</tr>
+<tr>
+<td><code>c2e8455f</code></td>
+<td>Sequin Library</td>
+<td>zillapede.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="skybox"><code>/skybox/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>146281a9</code></td>
+<td>GFX Library</td>
+<td>overlay_skybox.objlib</td>
+</tr>
+<tr>
+<td><code>d9180dcc</code></td>
+<td>GFX Library</td>
+<td>skybox_cube.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ui"><code>/ui/</code></h3>
+<table>
+<thead>
+<tr>
+<th>Hashed File Name</th>
+<th>.objlib File Type</th>
+<th>Original File Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>6bf8c2e7</code></td>
+<td>GFX Library</td>
+<td>auto_load.objlib</td>
+</tr>
+<tr>
+<td><code>c823ee6d</code></td>
+<td>GFX Library</td>
+<td>black_skybox.objlib</td>
+</tr>
+<tr>
+<td><code>bc635325</code></td>
+<td>GFX Library</td>
+<td>busy_widget.objlib</td>
+</tr>
+<tr>
+<td><code>95ee11ac</code></td>
+<td>GFX Library</td>
+<td>cal_meter.objlib</td>
+</tr>
+<tr>
+<td><code>280021c2</code></td>
+<td>GFX Library</td>
+<td>checkpoint_hud.objlib</td>
+</tr>
+<tr>
+<td><code>58f97837</code></td>
+<td>GFX Library</td>
+<td>credits.objlib</td>
+</tr>
+<tr>
+<td><code>4005db52</code></td>
+<td>GFX Library</td>
+<td>error_dialog.objlib</td>
+</tr>
+<tr>
+<td><code>85de87ec</code></td>
+<td>GFX Library</td>
+<td>fonts.objlib</td>
+</tr>
+<tr>
+<td><code>e92b3232</code></td>
+<td>GFX Library</td>
+<td>game.objlib</td>
+</tr>
+<tr>
+<td><code>eafab3c0</code></td>
+<td>GFX Library</td>
+<td>helpbar.objlib</td>
+</tr>
+<tr>
+<td><code>ad12bc82</code></td>
+<td>GFX Library</td>
+<td>hmd_help.objlib</td>
+</tr>
+<tr>
+<td><code>8c1ae36f</code></td>
+<td>GFX Library</td>
+<td>hud.objlib</td>
+</tr>
+<tr>
+<td><code>769fc563</code></td>
+<td>GFX Library</td>
+<td>icons.objlib</td>
+</tr>
+<tr>
+<td><code>16e53b68</code></td>
+<td>GFX Library</td>
+<td>ingame_hud_cam.objlib</td>
+</tr>
+<tr>
+<td><code>9af60c0c</code></td>
+<td>GFX Library</td>
+<td>leaderboard.objlib</td>
+</tr>
+<tr>
+<td><code>b6877555</code></td>
+<td>GFX Library</td>
+<td>leaderboard_network_check.objlib</td>
+</tr>
+<tr>
+<td><code>16b6ed2b</code></td>
+<td>GFX Library</td>
+<td>level_nav.objlib</td>
+</tr>
+<tr>
+<td><code>4835c7c2</code></td>
+<td>GFX Library</td>
+<td>level_select.objlib</td>
+</tr>
+<tr>
+<td><code>b39b014c</code></td>
+<td>GFX Library</td>
+<td>loading.objlib</td>
+</tr>
+<tr>
+<td><code>302ee97a</code></td>
+<td>GFX Library</td>
+<td>loading_bg.objlib</td>
+</tr>
+<tr>
+<td><code>b13dc798</code></td>
+<td>GFX Library</td>
+<td>main_menu.objlib</td>
+</tr>
+<tr>
+<td><code>72f2d5cf</code></td>
+<td>GFX Library</td>
+<td>options.objlib</td>
+</tr>
+<tr>
+<td><code>cfddbedd</code></td>
+<td>GFX Library</td>
+<td>options_controls.objlib</td>
+</tr>
+<tr>
+<td><code>fee62408</code></td>
+<td>GFX Library</td>
+<td>options_vr.objlib</td>
+</tr>
+<tr>
+<td><code>bc951901</code></td>
+<td>GFX Library</td>
+<td>pause.objlib</td>
+</tr>
+<tr>
+<td><code>e48a446e</code></td>
+<td>GFX Library</td>
+<td>pause_dialog.objlib</td>
+</tr>
+<tr>
+<td><code>8498c103</code></td>
+<td>GFX Library</td>
+<td>pre_game_dialog.objlib</td>
+</tr>
+<tr>
+<td><code>23d16ff4</code></td>
+<td>GFX Library</td>
+<td>rank_icons.objlib</td>
+</tr>
+<tr>
+<td><code>decf174c</code></td>
+<td>GFX Library</td>
+<td>restart_checkpoint.objlib</td>
+</tr>
+<tr>
+<td><code>e35f129b</code></td>
+<td>GFX Library</td>
+<td>score.objlib</td>
+</tr>
+<tr>
+<td><code>98909ead</code></td>
+<td>GFX Library</td>
+<td>section_widget.objlib</td>
+</tr>
+<tr>
+<td><code>fb1672bd</code></td>
+<td>GFX Library</td>
+<td>splash.objlib</td>
+</tr>
+<tr>
+<td><code>b183dcae</code></td>
+<td>GFX Library</td>
+<td>title.objlib</td>
+</tr>
+<tr>
+<td><code>ee58cc32</code></td>
+<td>GFX Library</td>
+<td>ui_loading.objlib</td>
+</tr>
+<tr>
+<td><code>c71afe7f</code></td>
+<td>GFX Library</td>
+<td>vr_toggle.objlib</td>
+</tr>
+<tr>
+<td><code>3fad0831</code></td>
+<td>GFX Library</td>
+<td>yn_dialog.objlib</td>
+</tr>
+<tr>
+<td><code>2565a4db</code></td>
+<td>Obj Library</td>
+<td>sfx.objlib</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../magic_numbers/" class="btn btn-neutral float-left" title="List"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../startup_hashes/" class="btn btn-neutral float-right" title="Execution Startup Hashes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../magic_numbers/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../startup_hashes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

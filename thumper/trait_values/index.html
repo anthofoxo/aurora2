@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/trait_values/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Trait Values - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Trait Values";
+        var mkdocs_page_input_path = "thumper\\trait_values.md";
+        var mkdocs_page_url = "/aurora/thumper/trait_values/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Trait Values</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#trait-type">Trait Type</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interpolation">Interpolation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#easing">Easing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#intensity">Intensity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#time">Time</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#move-phase">Move Phase</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step">Step</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#section">Section</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gate-sentry">Gate Sentry</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#level-random-type">Level Random Type</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#layer">Layer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bucket">Bucket</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#constraint">Constraint</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blend">Blend</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#z-mode">Z Mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stencil-channel">Stencil Channel</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#material-filtering">Material Filtering</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#material-lighting">Material Lighting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#texture-transform-mode">Texture Transform Mode</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#animation-type">Animation Type</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#path-scale-interpolation">Path Scale Interpolation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-position">Step Position</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tile-position">Tile Position</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sample-mode">Sample Mode</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+      <li class="breadcrumb-item active">Trait Values</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/trait_values.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="trait-values">Trait Values</h1>
+<h2 id="trait-type">Trait Type</h2>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>kTraitInt</code></td>
+<td><a href="../data_types/#int32">int32</a></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>kTraitBool</code></td>
+<td><a href="../data_types/#bool">bool</a></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>kTraitFloat</code></td>
+<td><a href="../data_types/#float32">float32</a></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>kTraitColor</code></td>
+<td>rgba</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>kTraitObj</code></td>
+<td>Object</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>kTraitVec3</code></td>
+<td><a href="../data_types/#vector3f">vector3f</a></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td><code>kTraitPath</code></td>
+<td>Path</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td><code>kTraitEnum</code></td>
+<td>Enum</td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td><code>kTraitAction</code></td>
+<td>Action</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>kTraitObjVec</code></td>
+<td>Object Vector</td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>kTraitString</code></td>
+<td><a href="../data_types/#sstr">string</a></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td><code>kTraitCue</code></td>
+<td>Cue</td>
+</tr>
+<tr>
+<td><code>12</code></td>
+<td><code>kTraitEvent</code></td>
+<td>Event</td>
+</tr>
+<tr>
+<td><code>13</code></td>
+<td><code>kTraitSym</code></td>
+<td>Symbol</td>
+</tr>
+<tr>
+<td><code>14</code></td>
+<td><code>kTraitList</code></td>
+<td>List</td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td><code>kTraitTraitPath</code></td>
+<td>Trait Path</td>
+</tr>
+<tr>
+<td><code>16</code></td>
+<td><code>kTraitQuat</code></td>
+<td>Quaternion</td>
+</tr>
+<tr>
+<td><code>17</code></td>
+<td><code>kTraitChildLib</code></td>
+<td>Child Library</td>
+</tr>
+<tr>
+<td><code>18</code></td>
+<td><code>kTraitComponent</code></td>
+<td>Component</td>
+</tr>
+<tr>
+<td><code>19</code></td>
+<td><code>kNumTraitTypes</code></td>
+<td>Default</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interpolation">Interpolation</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTraitInterpLinear</code></td>
+<td>Linear Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpQuadratic</code></td>
+<td>Quadratic Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpCubic</code></td>
+<td>Cubic Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpQuartic</code></td>
+<td>Quartic Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpQuintic</code></td>
+<td>Quintic Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpSine</code></td>
+<td>Sine Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpStep</code></td>
+<td>Step Interpolation</td>
+</tr>
+<tr>
+<td><code>kTraitInterpNone</code></td>
+<td>No Interpolation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="easing">Easing</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kEaseInOut</code></td>
+<td>Ease In Out</td>
+</tr>
+<tr>
+<td><code>kEaseIn</code></td>
+<td>Ease In</td>
+</tr>
+<tr>
+<td><code>kEaseOut</code></td>
+<td>Ease Out</td>
+</tr>
+</tbody>
+</table>
+<h2 id="intensity">Intensity</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kIntensityScale</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kIntensityAdd</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="time">Time</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTimeBeats</code></td>
+<td>Use beats in relative time as the unit of time</td>
+</tr>
+<tr>
+<td><code>kTimeSeconds</code></td>
+<td>Use seconds in relative time as the unit of time</td>
+</tr>
+<tr>
+<td><code>kTimeBeatsRealtime</code></td>
+<td>Use beats in absolute time (<a href="../master/">.master Object</a> time) as the unit of time</td>
+</tr>
+<tr>
+<td><code>kTimeSecondsRealtime</code></td>
+<td>Use seconds in absolute time (<a href="../master/">.master Object</a> time) as the unit of time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="move-phase">Move Phase</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kMovePhaseRepeatChild</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kMovePhaseRepeat</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="step">Step</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kStepGameplay</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStepProp</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="section">Section</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SECTION_LINEAR</code></td>
+<td>Linear section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_TRIANGLE</code></td>
+<td>Triangle boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_CIRCLE</code></td>
+<td>Circle boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_MINI</code></td>
+<td>Mini boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_CRAKHED</code></td>
+<td>Crakhed boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_CRAKHED_FINAL</code></td>
+<td>Crakhed final boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_BOSS_PYRAMID</code></td>
+<td>Pyramid boss section</td>
+</tr>
+<tr>
+<td><code>SECTION_END</code></td>
+<td>End section</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gate-sentry">Gate Sentry</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SENTRY_NONE</code></td>
+<td>No sentry</td>
+</tr>
+<tr>
+<td><code>SENTRY_SINGLE_LANE</code></td>
+<td>Single lane sentry</td>
+</tr>
+<tr>
+<td><code>SENTRY_MULTI_LANE</code></td>
+<td>Multi-lane sentry</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-random-type">Level Random Type</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LEVEL_RANDOM_NONE</code></td>
+<td>No level randomness</td>
+</tr>
+<tr>
+<td><code>LEVEL_RANDOM_BUCKET</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>LEVEL_RANDOM_PURE</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="layer">Layer</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kLayerWorld</code></td>
+<td>World layer. An object with this layer trait is drawn first, behind all other objects.</td>
+</tr>
+<tr>
+<td><code>kLayerUI</code></td>
+<td>UI layer. An object with this layer trait is drawn last, in front of all other objects.</td>
+</tr>
+<tr>
+<td><code>kNumDrawLayers</code></td>
+<td>Default layer.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bucket">Bucket</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kBucketTerrain</code></td>
+<td>Terrain bucket. Objects with this trait value are drawn first, before objects in other buckets.</td>
+</tr>
+<tr>
+<td><code>kBucketMain</code></td>
+<td>Main bucket. Objects with this trait value are drawn after the terrain bucket objects and before the effect bucket objects.</td>
+</tr>
+<tr>
+<td><code>kBucketEffect</code></td>
+<td>Effect bucket. Objects with this trait value are drawn after the main bucket objects and before the post effect bucket objects.</td>
+</tr>
+<tr>
+<td><code>kBucketPostEffect</code></td>
+<td>Post effect bucket. Objects with this trait value are drawn last, after objects in other buckets.</td>
+</tr>
+<tr>
+<td><code>kBucketParent</code></td>
+<td>Parent bucket. An object with this trait value is in the same bucket as its parent.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="constraint">Constraint</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kConstraintParent</code></td>
+<td>Parent constraint</td>
+</tr>
+<tr>
+<td><code>kConstraintBillboard</code></td>
+<td>Billboard constraint</td>
+</tr>
+<tr>
+<td><code>kConstraintSkybox</code></td>
+<td>Skybox constraint</td>
+</tr>
+</tbody>
+</table>
+<h2 id="blend">Blend</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kSource</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kAdditive</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kSubtractive</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kSourceSubtractive</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kAlphaSource</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kAlphaSourceAdditive</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kAlphaSourceSubtractive</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStencilPortalBlending</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="z-mode">Z Mode</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kZDisable</code></td>
+<td>Z Disable</td>
+</tr>
+<tr>
+<td><code>kZTestOnly</code></td>
+<td>Z Test Only</td>
+</tr>
+<tr>
+<td><code>kZEnable</code></td>
+<td>Z Enable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stencil-channel">Stencil Channel</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kStencilDisabled</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStencilPortal</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStencilPortalInside</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStencilPortalOutside</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStencilShadowDrawOnce</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="material-filtering">Material Filtering</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kFilteringNone</code></td>
+<td>No filtering</td>
+</tr>
+<tr>
+<td><code>kFilteringLinear</code></td>
+<td>Linear filtering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="material-lighting">Material Lighting</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kLightingNone</code></td>
+<td>No lighting</td>
+</tr>
+<tr>
+<td><code>kLightingVertex</code></td>
+<td>Vertex lighting</td>
+</tr>
+<tr>
+<td><code>kLightingPixel</code></td>
+<td>Pixel lighting</td>
+</tr>
+<tr>
+<td><code>kLightingEmissiveReflect</code></td>
+<td>Emissive Reflect lighting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="texture-transform-mode">Texture Transform Mode</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTexXfmDisable</code></td>
+<td>Texture transform disable</td>
+</tr>
+<tr>
+<td><code>kTexXfmEnable</code></td>
+<td>Texture transform enable</td>
+</tr>
+<tr>
+<td><code>kTexXfmReflection</code></td>
+<td>Texture transform reflection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="animation-type">Animation Type</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTraitAnimNormal</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTraitAnimStep</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTraitAnimStepFloatRange</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTraitAnimStepDuration</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTraitAnimStepDurationFixed</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="path-scale-interpolation">Path Scale Interpolation</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kPathScaleInterpNone</code></td>
+<td>Path scale no interpolation</td>
+</tr>
+<tr>
+<td><code>kPathScaleInterpLinear</code></td>
+<td>Path scale linear interpolation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-position">Step Position</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kStepFirst</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStepLast</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kStepAny</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tile-position">Tile Position</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTileCurrent</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTilePrev</code></td>
+<td><em>Unknown</em></td>
+</tr>
+<tr>
+<td><code>kTileNext</code></td>
+<td><em>Unknown</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sample-mode">Sample Mode</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kSampleOneOff</code></td>
+<td>One-off</td>
+</tr>
+<tr>
+<td><code>kSampleDynamic</code></td>
+<td>Dynamic</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../data_types/" class="btn btn-neutral float-left" title="Data Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../magic_numbers/" class="btn btn-neutral float-right" title="List">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../data_types/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../magic_numbers/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

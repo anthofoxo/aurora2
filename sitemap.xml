@@ -2,58 +2,190 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://anthofoxo.xyz/aurora/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/contrib/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/aurora/dev_setup_guide/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/aurora/user_install_guide/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/aurora/user_level_reload/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/extensions/AUR_tcle_localization/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/modding/install_overview/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/modding/install_windows/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/modding/overview/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/modding/tml_deprecation/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
-         <loc>https://anthofoxo.xyz/aurora/thumper/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <loc>https://anthofoxo.xyz/aurora/thumper/3d_comp_dict/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/anim_decomp/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/audio_channels/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/thumper/basic_types/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/cam_decom/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/cam_object_dict/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/data_types/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/dicts_other/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/downpatching/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/thumper/drools_editor/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
-         <loc>https://anthofoxo.xyz/aurora/thumper/level_objlib_structure/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <loc>https://anthofoxo.xyz/aurora/thumper/game_files/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
-         <loc>https://anthofoxo.xyz/aurora/thumper/objlib_structure/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <loc>https://anthofoxo.xyz/aurora/thumper/gate/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/hashed_file_names/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/introduction/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/leaf/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/leaf_dump/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/lvl/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/magic_numbers/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/master/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/mesh/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/mesh_hashes/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/object_param_selectors/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/object_types/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/objlib_gen_structure/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/objlib_level_structure/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
     <url>
          <loc>https://anthofoxo.xyz/aurora/thumper/overall_structure/</loc>
-         <lastmod>2026-01-11</lastmod>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/samples_sorted/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/script_nodes/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/seqin_objects/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/spn_object_dict/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/startup_hashes/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/structures/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/stub/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/tooling/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/trait_values/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/ui_thumper_scoring/</loc>
+         <lastmod>2026-09-06</lastmod>
+    </url>
+    <url>
+         <loc>https://anthofoxo.xyz/aurora/thumper/undoc_headers/</loc>
+         <lastmod>2026-09-06</lastmod>
     </url>
 </urlset>

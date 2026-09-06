@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/extensions/AUR_tcle_localization/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>AUR_tcle_localization - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AUR_tcle_localization";
+        var mkdocs_page_input_path = "extensions\\AUR_tcle_localization.md";
+        var mkdocs_page_url = "/aurora/extensions/AUR_tcle_localization/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Extensions</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">AUR_tcle_localization</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#contact">Contact</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributors">Contributors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#status">Status</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#version">Version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additions-to-the-spec">Additions to the Spec</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additions-to-tcl">Additions to .TCL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage-example">Usage Example</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#issues">Issues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#revision-history">Revision History</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#september-6-2026-revision-2">September 6 2026 (Revision 2)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#september-5-2026">September 5 2026</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../thumper/downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../thumper/dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Aurora</li>
+          <li class="breadcrumb-item">Extensions</li>
+      <li class="breadcrumb-item active">AUR_tcle_localization</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/extensions/AUR_tcle_localization.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aur_tcle_localization">AUR_tcle_localization</h1>
+<h2 id="contact">Contact</h2>
+<ul>
+<li>AnthoFoxo (@AnthoFoxo)</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li>AnthoFoxo</li>
+</ul>
+<h2 id="status">Status</h2>
+<p>Draft</p>
+<h2 id="version">Version</h2>
+<p>Last Modified Date: September 5, 2026
+<br>
+Revision 2</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Written based on the wording of the Aurora 0.3 specification.</p>
+<h2 id="overview">Overview</h2>
+<p>TML was written during a time where the localization system was not well understood and as a result TCLE was written with the same lack of awareness.</p>
+<p>This resulted in non English players having the <code>SYM</code> text appear where you should see level names.</p>
+<p>This extension resolves this by doing 2 things.</p>
+<ol>
+<li>Specify how unresolved localization keys should handled if they don't exist.</li>
+<li>Allow TCLE levels to specify localizations if the authors wish to do so.</li>
+</ol>
+<h2 id="additions-to-the-spec">Additions to the Spec</h2>
+<p>All localization keys should be collected and iterated after target generation completes. For every non-English language that doesn't contain one of the collected keys. Copy the value from the English localization into the non-English localization.</p>
+<h2 id="additions-to-tcl">Additions to .TCL</h2>
+<p>Add optional field <code>localization</code> with the following optional keys:</p>
+<ul>
+<li><code>da</code></li>
+<li><code>de</code></li>
+<li><code>en</code></li>
+<li><code>es-la</code></li>
+<li><code>fi</code></li>
+<li><code>fr-ca</code></li>
+<li><code>fr</code></li>
+<li><code>it</code></li>
+<li><code>ja</code></li>
+<li><code>ko</code></li>
+<li><code>nl</code></li>
+<li><code>no</code></li>
+<li><code>pl</code></li>
+<li><code>pt-br</code></li>
+<li><code>ru</code></li>
+<li><code>sv</code></li>
+<li><code>tr</code></li>
+<li><code>zh-s</code></li>
+<li><code>zh-t</code></li>
+</ul>
+<p>The values of these keys are the values to be used in the related localization tables.</p>
+<ul>
+<li>If <code>nil</code>. The value will be copied from the <code>en</code> key.</li>
+<li>If the key <code>en</code> is <code>nil</code>. It's value is copied from the <code>level_name</code> field.</li>
+</ul>
+<h2 id="errors">Errors</h2>
+<p>A mod is ill-formed if <code>localizations</code> is not a table while the extension is enabled.</p>
+<h2 id="usage-example">Usage Example</h2>
+<pre><code class="language-lua">{
+    extensions = {
+        enabled = {
+            &quot;AUR_tcle_localization&quot;,
+        }
+    },
+    localization = {
+        en = &quot;level&quot;,
+        es = &quot;nivel&quot;,
+        ko = &quot;수준&quot;,
+    }
+}
+</code></pre>
+<h2 id="issues">Issues</h2>
+<ol>
+<li>How should unspecified localization pull default values. Should <code>en</code> always be the fallback?</li>
+</ol>
+<p>RESOLVED: Yes. <code>en</code> is established as the baseline. And all localizations are easily accesible. Theres no reason to introduce complex dependency trees.</p>
+<ol>
+<li>If the <code>en</code> localization field is <code>nil</code>. Should the level be considered ill-formed or should the level name be used as fallback.</li>
+</ol>
+<p>RESOLVED: Fallback for the <code>en</code> key should copy from the <code>level_name</code> field. This provides better forward compatability with minimal effort.</p>
+<h2 id="revision-history">Revision History</h2>
+<h3 id="september-6-2026-revision-2">September 6 2026 (Revision 2)</h3>
+<ul>
+<li>Specify fallback behavior for unspecified keys</li>
+</ul>
+<h3 id="september-5-2026">September 5 2026</h3>
+<ul>
+<li>Initial draft</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../aurora/dev_setup_guide/" class="btn btn-neutral float-left" title="Developer Installation and Setup Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../thumper/introduction/" class="btn btn-neutral float-right" title="Concepts">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../aurora/dev_setup_guide/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../thumper/introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

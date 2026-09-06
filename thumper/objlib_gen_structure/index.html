@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/objlib_gen_structure/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>General Structure of .objlib Files - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "General Structure of .objlib Files";
+        var mkdocs_page_input_path = "thumper\\objlib_gen_structure.md";
+        var mkdocs_page_url = "/aurora/thumper/objlib_gen_structure/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">General Structure of .objlib Files</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#types-of-objlib-files">Types of .objlib Files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-format">File Format</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#header">Header</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#global-library-list">Global Library List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-information">File Information</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#object-list">Object List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#object-definition">Object Definition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#footer">Footer</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+      <li class="breadcrumb-item active">General Structure of .objlib Files</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/objlib_gen_structure.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="general-structure-of-objlib-files">General Structure of .objlib Files</h1>
+<p>Game object library (.objlib) files are game files in a custom-made format, created and edited in <a href="../drools_editor/">Drool's Editor</a>. They are arguably the most important type of game files, defining and controlling various interactive and decorative visual elements and audio elements in the game.</p>
+<h2 id="types-of-objlib-files">Types of .objlib Files</h2>
+<p>In each .objlib file, after the first 4 bytes containing the <a href="../overall_structure/#file-types">file type identifier</a>, the next 4 bytes contain a <a href="../magic_numbers/">"magic number"</a> identifying what type of .objlib file it is. The following table lists all possible values and their meanings.</p>
+<table>
+<thead>
+<tr>
+<th>Value (big-endian)</th>
+<th>Value (little-endian)</th>
+<th>Number of Files</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4314a51b</code></td>
+<td><code>1ba51443</code></td>
+<td>296</td>
+<td>GFX library. Most .objlib files that do not fit into the other types are in this category, including .objlib files that contain UI objects, bosses, VFX, skyboxes, interactive visual objects, and decorative visual objects with simple animations.</td>
+<td>vr_toggle.objlib (c71afe7f.pc)</td>
+</tr>
+<tr>
+<td><code>484595b0</code></td>
+<td><code>b0954548</code></td>
+<td>90</td>
+<td>Sequin library. These are .objlib files that contain decorative visual objects with complex animations that require more sequencing control.</td>
+<td>ducker_ring_sequin.objlib (69e6e7e2.pc)</td>
+</tr>
+<tr>
+<td><code>19621c9d</code></td>
+<td><code>9d1c6219</code></td>
+<td>17</td>
+<td>Obj library. These are .objlib files that control the audio aspect of the game, including channels and SFX, and VR playspace scale.</td>
+<td>vr_playspace.objlib (ae6469be.pc)</td>
+</tr>
+<tr>
+<td><code>9e4d370b</code></td>
+<td><code>0b374d9e</code></td>
+<td>10</td>
+<td><a href="../objlib_level_structure/">Level library.</a> These are .objlib files that control the sequence and timing of objects appearing in a level.</td>
+<td>demo.objlib (673863f9.pc)</td>
+</tr>
+<tr>
+<td><code>4f6274e6</code></td>
+<td><code>e674624f</code></td>
+<td>1</td>
+<td>Avatar library. This is the .objlib file that control the appearance of the beetle and its reactions to input and obstacles.</td>
+<td>avatar.objlib (cd2c1ec.pc)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-format">File Format</h2>
+<p>Each .objlib file is divided into six main sections.</p>
+<h3 id="header">Header</h3>
+<p>This section contains the <a href="../overall_structure/#file-types">file type identifier</a> <code>8</code>, which stands for .objlib, and the specific type of .objlib file. It also contains a few <a href="../data_types/#int32">int32</a> values, of which the purposes are unclear at the moment. These <a href="../data_types/#int32">int32</a> values are probably not important in the grand scheme of things, as all .objlib files of the same type seem to contain the same set of values. The <a href="../data_types/#int32">int32</a> values included are slightly different between different types of .objlib files. See the examples above for the specific <a href="../data_types/#int32">int32</a> values included in each type of .objlib file.</p>
+<h3 id="global-library-list">Global Library List</h3>
+<p>This section lists the global .objlib files referenced by the current .objlib file. Objects defined in the Object Definition section can reference any of the objects contained in these global .objlib files. These global .objlib files can contain more global .objlib files, whose objects can be referenced by the current .objlib file as well.</p>
+<h3 id="file-information">File Information</h3>
+<p>This section contains the original file path of the current .objlib file.</p>
+<h3 id="object-list">Object List</h3>
+<p>This section lists the external objects referenced by the current .objlib file, and the objects defined within the current .objlib file. For each external object, the <a href="../object_types/">object type</a>, object name and the original file path of the .objlib file containing that object are specified. For each object defined within the current file, the <a href="../object_types/">object type</a> and object name are specified.</p>
+<h3 id="object-definition">Object Definition</h3>
+<p>This section contains the definition of each object listed in the Object List section. The objects in this section are defined in the same order as they are listed in the Object List section. There is no clear marker to separate the boundary between two objects. Fortunately, most objects contain the following 32-bit section marker near the beginning:</p>
+<table>
+<thead>
+<tr>
+<th>Value (big-endian)</th>
+<th>Value (little-endian)</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>12fb8e3c</code></td>
+<td><code>3c8efb12</code></td>
+<td>Start of the main definition section of the current object.</td>
+</tr>
+</tbody>
+</table>
+<p>For objects that have an empty main definition section, such as .xfm/.xfmer Objects, this marker is optional and may be omitted.</p>
+<h3 id="footer">Footer</h3>
+<p>This section contains data and objects related to the .objlib file itself. The specific types of data and objects included depend on the type of .objlib file.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../overall_structure/" class="btn btn-neutral float-left" title="Overall Structure of Game Files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../objlib_level_structure/" class="btn btn-neutral float-right" title="Structure of Level .objlib Files">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../overall_structure/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../objlib_level_structure/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

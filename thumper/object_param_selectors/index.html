@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/object_param_selectors/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Object/Parameter Selectors - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Object/Parameter Selectors";
+        var mkdocs_page_input_path = "thumper\\object_param_selectors.md";
+        var mkdocs_page_url = "/aurora/thumper/object_param_selectors/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Magic Numbers</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Object/Parameter Selectors</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#where-used">Where Used</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#values">Values</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#object-parameters">Object Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#playable-interactive-objects">Playable (Interactive) Objects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decorative-objects">Decorative Objects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bosses-gate-objects-only">Bosses (.gate Objects only)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Magic Numbers</li>
+      <li class="breadcrumb-item active">Object/Parameter Selectors</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/object_param_selectors.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="objectparameter-selectors">Object/Parameter Selectors</h1>
+<h2 id="where-used">Where Used</h2>
+<ul>
+<li><a href="../seqin_objects/">Sequencer Objects</a></li>
+<li><a href="../gate/">.gate Objects</a></li>
+<li>Set Trait Script Nodes</li>
+</ul>
+<h2 id="values">Values</h2>
+<h3 id="object-parameters">Object Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Value (little-endian)</th>
+<th>Sub-Object/Parameter Name</th>
+<th>Main Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>e04f3144</code></td>
+<td>layer_volume</td>
+<td><a href="../lvl/">.lvl Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>90db6c5c</code></td>
+<td>pitch</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>461da26a</code></td>
+<td>roll</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>659c0bb8</code></td>
+<td>turn</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>1e470b5d</code></td>
+<td>turn_auto</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>b44b9ff1</code></td>
+<td>scale_x</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>5c01c2b9</code></td>
+<td>scale_y</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>2794bcce</code></td>
+<td>scale_z</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>2e08b151</code></td>
+<td>offset_x</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>fa4ab34f</code></td>
+<td>offset_y</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>1ff804bc</code></td>
+<td>offset_z</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>48697144</code></td>
+<td>visibla01</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>842a58fa</code></td>
+<td>visibla02</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a444acf9</code></td>
+<td>visible</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>93dcfe04</code></td>
+<td>visiblz01</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>7ce4037d</code></td>
+<td>visiblz02</td>
+<td><a href="../leaf/">.leaf Objects</a></td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>7ec6de5f</code></td>
+<td>sequin_speed</td>
+<td>Avatar .objlib Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>45e125b3</code></td>
+<td>win</td>
+<td>Avatar .objlib Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>f31f3243</code></td>
+<td>win_checkpoint</td>
+<td>Avatar .objlib Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d37839a4</code></td>
+<td>win_checkpoint_silent</td>
+<td>Avatar .objlib Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>82bb9c74</code></td>
+<td>play</td>
+<td>.samp Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>7a2ec56d</code></td>
+<td>play_clean</td>
+<td>.samp Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a21622fa</code></td>
+<td>pause</td>
+<td>.samp Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>0bb8ea4b</code></td>
+<td>resume</td>
+<td>.samp Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>9fa68571</code></td>
+<td>stop</td>
+<td>.samp Objects</td>
+</tr>
+<tr>
+<td>rgba</td>
+<td><code>13bdaa3b</code></td>
+<td>emissive_color</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td>rgba</td>
+<td><code>7d06b11c</code></td>
+<td>ambient_color</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td>rgba</td>
+<td><code>3dfe8a74</code></td>
+<td>diffuse_color</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td>rgba</td>
+<td><code>d7b602ce</code></td>
+<td>specular_color</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td>rgba</td>
+<td><code>1ca08372</code></td>
+<td>reflectivity_color</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>52a06bf4</code></td>
+<td>alpha</td>
+<td>.mat Objects</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>b3b5d9f1</code></td>
+<td>frame</td>
+<td>.anim Objects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="playable-interactive-objects">Playable (Interactive) Objects</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Value (little-endian)</th>
+<th>Sub-Object/Parameter Name</th>
+<th>Main Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>52d7447a</code></td>
+<td>thump_rails.a01</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>583cc8c2</code></td>
+<td>thump_rails.a02</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>4477bbd4</code></td>
+<td>thump_rails.ent</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>dc12888d</code></td>
+<td>thump_rails.z01</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>bbf22741</code></td>
+<td>thump_rails.z02</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>897c516b</code></td>
+<td>thump_checkpoint.ent</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>adfa9f2c</code></td>
+<td>thump_rails_fast_activat.ent</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>4733a5e6</code></td>
+<td>thump_boss_bonus.ent</td>
+<td>.spn Objects: decorators/thump_rails.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>51b93243</code></td>
+<td>grindable_still.ent</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>cf53c501</code></td>
+<td>left_multi.a01</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>becb71fa</code></td>
+<td>left_multi.a02</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>6e5b2576</code></td>
+<td>left_multi.ent</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d528868a</code></td>
+<td>left_multi.z01</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b9e107fc</code></td>
+<td>center_multi.a02</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>ed5a7e91</code></td>
+<td>center_multi.ent</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>e27b6c3c</code></td>
+<td>center_multi.z01</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>99f4653e</code></td>
+<td>right_multi.a02</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1e0ae961</code></td>
+<td>right_multi.ent</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>03fd4938</code></td>
+<td>right_multi.z01</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>73b0f245</code></td>
+<td>right_multi.z02</td>
+<td>.spn Objects: decorators/thump_grindable.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>3e774af9</code></td>
+<td>grindable_quarters.ent</td>
+<td>.spn Objects: decorators/thump_grindable_multi.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>73af2bae</code></td>
+<td>grindable_double.ent</td>
+<td>.spn Objects: decorators/thump_grindable_multi.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>2216f6df</code></td>
+<td>grindable_thirds.ent</td>
+<td>.spn Objects: decorators/thump_grindable_multi.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>8b3738a4</code></td>
+<td>grindable_with_thump.ent</td>
+<td>.spn Objects: decorators/thump_grindable_multi.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c933e313</code></td>
+<td>ducker_crak.ent</td>
+<td>.spn Objects: decorators/ducker.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>0743418a</code></td>
+<td>jumper_1_step.ent</td>
+<td>.spn Objects: decorators/jumper/jumper_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>2eb30851</code></td>
+<td>jumper_boss.ent</td>
+<td>.spn Objects: decorators/jumper/jumper_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>8d55abe4</code></td>
+<td>jumper_6_step.ent</td>
+<td>.spn Objects: decorators/jumper/jumper_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b886b204</code></td>
+<td>jump_high.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>9b004f93</code></td>
+<td>jump_high_2.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>cdfddfc4</code></td>
+<td>jump_high_4.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>10be3b0b</code></td>
+<td>jump_high_6.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>0ef04fb0</code></td>
+<td>jump_boss.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>601c9d22</code></td>
+<td>swerve_off.a01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d881767c</code></td>
+<td>swerve_off.a02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>3f602426</code></td>
+<td>swerve_off.ent</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c92199c0</code></td>
+<td>swerve_off.z01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>0d0004b1</code></td>
+<td>swerve_off.z02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>43eae5dd</code></td>
+<td>millipede_half.a01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>ce42c1bf</code></td>
+<td>millipede_half.a02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>be018127</code></td>
+<td>millipede_half.ent</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b01d4126</code></td>
+<td>millipede_half.z01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>45b829c9</code></td>
+<td>millipede_half.z02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>bf2a2b2a</code></td>
+<td>millipede_half_phrase.a01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>cacf6bea</code></td>
+<td>millipede_half_phrase.a02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>bbaf4e32</code></td>
+<td>millipede_half_phrase.ent</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>f53455f0</code></td>
+<td>millipede_half_phrase.z01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>f28e0216</code></td>
+<td>millipede_half_phrase.z02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_half.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>366799e4</code></td>
+<td>millipede_quarter.a01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>40b25fd4</code></td>
+<td>millipede_quarter.a02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1703ae12</code></td>
+<td>millipede_quarter.ent</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>66ac1596</code></td>
+<td>millipede_quarter.z01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>db0dba2f</code></td>
+<td>millipede_quarter.z02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>041539b3</code></td>
+<td>millipede_quarter_phrase.a01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>4c1c613a</code></td>
+<td>millipede_quarter_phrase.a02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1d2ce5f4</code></td>
+<td>millipede_quarter_phrase.ent</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>0bc1ab97</code></td>
+<td>millipede_quarter_phrase.z01</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1e48e54e</code></td>
+<td>millipede_quarter_phrase.z02</td>
+<td>.spn Objects: decorators/obstacles/wurms/millipede_quarter.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>f1e67274</code></td>
+<td>sentry.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>8792db5a</code></td>
+<td>level_9.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>32eb179b</code></td>
+<td>level_5.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>476dfd28</code></td>
+<td>level_8.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>32e9a51e</code></td>
+<td>sentry_boss.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>bfeb686e</code></td>
+<td>level_7.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>ac58b0b9</code></td>
+<td>level_6.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c70f3afd</code></td>
+<td>sentry_boss_multilane.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b4034d58</code></td>
+<td>level_8_multi.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b87c60e8</code></td>
+<td>level_9_multi.ent</td>
+<td>.spn Objects: decorators/sentry.objlib</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decorative-objects">Decorative Objects</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Value (little-endian)</th>
+<th>Sub-Object/Parameter Name</th>
+<th>Main Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a8d60562</code></td>
+<td>trees.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_big_trees_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>bb63511d</code></td>
+<td>trees_16.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_big_trees_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c5af922f</code></td>
+<td>trees_4.ent</td>
+<td>.spn Objects: decorators/jump_high/jump_high_big_trees_set.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1e7bd174</code></td>
+<td>speed_streaks_short.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>87cdcba8</code></td>
+<td>speed_streaks_RGB.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c66f96dd</code></td>
+<td>smoke.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d7843636</code></td>
+<td>death_shatter.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>55a80a99</code></td>
+<td>speed_streaks.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>76414bb7</code></td>
+<td>data_streaks_radial.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>49113923</code></td>
+<td>boss_7_tunnel_enter.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>db619bed</code></td>
+<td>boss_damage_stage4.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a28811db</code></td>
+<td>crakhed_damage.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>6f02512b</code></td>
+<td>win_debris.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a8bd36c8</code></td>
+<td>crakhed_destroy.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>71dc045d</code></td>
+<td>stalactites.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>6ac944d0</code></td>
+<td>aurora.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>01a07bd9</code></td>
+<td>vortex_decorator.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>718ff746</code></td>
+<td>boss_damage_stage3.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d8258d1a</code></td>
+<td>boss_damage_stage1.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>b00a87d0</code></td>
+<td>boss_damage_stage2.ent</td>
+<td>.spn Objects: entity/ambient_fx.objlib</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>d8e402da</code></td>
+<td>black</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>1411f1a3</code></td>
+<td>crakhed</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>4bb91040</code></td>
+<td>dark_blue</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>fa50813b</code></td>
+<td>dark_green</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>30656178</code></td>
+<td>dark_red</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>c0c8325a</code></td>
+<td>light_blue</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>3b652d19</code></td>
+<td>light_green</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a7aa53f0</code></td>
+<td>light_red</td>
+<td>skybox_colors.flow (levels/demo.objlib)</td>
+</tr>
+<tr>
+<td>### SFX Objects</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Data Type</td>
+<td>Value (little-endian)</td>
+<td>Sub-Object/Parameter Name</td>
+<td>Main Object</td>
+</tr>
+<tr>
+<td>--------------------------</td>
+<td>---------------------</td>
+<td>-------------------------</td>
+<td>----------------------------------------------------------</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>e5745bf3</code></td>
+<td>fire</td>
+<td>turn_anticipation.flow (levels/Level6/level_6.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>e073575f</code></td>
+<td>diss11</td>
+<td>dissonant_bursts.flow (global/dissonant_bursts.objlib)</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>79603dd3</code></td>
+<td>french12</td>
+<td>french_horn_chords.flow (global/french_horn_chords.objlib)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bosses-gate-objects-only">Bosses (<a href="../gate/">.gate Objects</a> only)</h3>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Value (little-endian)</th>
+<th>Sub-Object/Parameter Name</th>
+<th>Main Object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N/A</td>
+<td><code>8c0dd639</code></td>
+<td>tutorial_thumps.ent</td>
+<td>.spn Objects: boss/gate_triangle/triangle_boss.objlib</td>
+</tr>
+<tr>
+<td>N/A</td>
+<td><code>c7c056e2</code></td>
+<td>boss_gate_pellet.ent</td>
+<td>.spn Objects: boss/boss_spiral/gate_spiral.objlib</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../object_types/" class="btn btn-neutral float-left" title="Object Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../seqin_objects/" class="btn btn-neutral float-right" title="Sequencer Objects">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../object_types/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../seqin_objects/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/samples_sorted/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Sorted Sample List - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sorted Sample List";
+        var mkdocs_page_input_path = "thumper\\samples_sorted.md";
+        var mkdocs_page_url = "/aurora/thumper/samples_sorted/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Misc</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Sorted Sample List</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Misc</li>
+      <li class="breadcrumb-item active">Sorted Sample List</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/samples_sorted.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sorted-samples-list">Sorted Samples List</h1>
+<ul>
+<li>samples/beautiful/beautiful_sensuality.wav</li>
+<li>samples/boss/ending_sequence.wav</li>
+<li>samples/boss/final_boss_sounds_pattern2.wav</li>
+<li>samples/boss/geom_boss_divide.wav</li>
+<li>samples/boss/monster,roar,attack,echoing.wav</li>
+<li>samples/boss/piano_pattern1.wav</li>
+<li>samples/boss/piano_pattern2.wav</li>
+<li>samples/boss/piano_pattern3.wav</li>
+<li>samples/boss/piano_pattern4.wav</li>
+<li>samples/boss/pyramid_boss_hit_pattern3.wav</li>
+<li>samples/boss/tuba_pattern1.wav</li>
+<li>samples/boss/tuba_pattern2.wav</li>
+<li>samples/boss/tuba_pattern3.wav</li>
+<li>samples/boss/tuba_pattern4.wav</li>
+<li>samples/boss/wail1.wav</li>
+<li>samples/boss/wail2.wav</li>
+<li>samples/boss/wail3.wav</li>
+<li>samples/boss/wail4.wav</li>
+<li>samples/boss/waterphone1.wav</li>
+<li>samples/boss/waterphone2.wav</li>
+<li>samples/boss/waterphone3.wav</li>
+<li>samples/boss/waterphone4.wav</li>
+<li>samples/boss/waterphone5.wav</li>
+<li>samples/crakhed_final_roar.wav</li>
+<li>samples/crakhed_final_roarb.wav</li>
+<li>samples/decorators_ambient/boss_hit_smoke.wav</li>
+<li>samples/decorators_ambient/chrome_debris.wav</li>
+<li>samples/decorators_ambient/smoke.wav</li>
+<li>samples/decorators/boss_shield_block.wav</li>
+<li>samples/decorators/checkpoint_thrust.wav</li>
+<li>samples/decorators/high_jump.wav</li>
+<li>samples/decorators/jump_high_thump.wav</li>
+<li>samples/decorators/jumper_approach_boss.wav</li>
+<li>samples/decorators/jumper_approach.wav</li>
+<li>samples/decorators/millipede_cry.wav</li>
+<li>samples/decorators/millipede_landing.wav</li>
+<li>samples/decorators/millipede_quarter_landing.wav</li>
+<li>samples/dissonant/diss_violins_pattern2.wav</li>
+<li>samples/dissonant/diss_violins_pattern3.wav</li>
+<li>samples/dissonant/diss_violins_pattern4.wav</li>
+<li>samples/dissonant/diss_violins_pattern5.wav</li>
+<li>samples/dissonant/dissonant_additive_pad.wav</li>
+<li>samples/dissonant/dissonant_affecting_preciousness.wav</li>
+<li>samples/dissonant/dissonant_chainsaw_massacre.wav</li>
+<li>samples/dissonant/dissonant_delerius_violin.wav</li>
+<li>samples/dissonant/dissonant_once_apon_a_time.wav</li>
+<li>samples/dissonant/dissonant_sensuality.wav</li>
+<li>samples/drums/level1/basic_fill1_short.wav</li>
+<li>samples/drums/level1/basic_fill1.wav</li>
+<li>samples/drums/level1/basic_fill2a.wav</li>
+<li>samples/drums/level1/basic_fill2b.wav</li>
+<li>samples/drums/level1/basic_timpani_test.wav</li>
+<li>samples/drums/level1/basic1.wav</li>
+<li>samples/drums/level1/basic4_cymbal.wav</li>
+<li>samples/drums/level1/basic4.wav</li>
+<li>samples/drums/level1/massive_rhythms/drone_one_apon_a_time.wav</li>
+<li>samples/drums/level1/massive_rhythms/thumper_absolute1.wav</li>
+<li>samples/drums/level1/massive_rhythms/thumper_absolute2.wav</li>
+<li>samples/drums/level1/massive_rhythms/thumper_big_buttom.wav</li>
+<li>samples/drums/level1/massive_rhythms/thumper_brutal_electro.wav</li>
+<li>samples/drums/level1/timpani_test1_triplet.wav</li>
+<li>samples/ending_credits_song/9_ultimate_space_beetle_theme.wav</li>
+<li>samples/gold_accellerate.wav</li>
+<li>samples/gold_decelerate.wav</li>
+<li>samples/high_score_song/8_children_of_the_head.wav</li>
+<li>samples/hit/boss_7_tunnel_enter.wav</li>
+<li>samples/hit/boss_frac_pulse.wav</li>
+<li>samples/hit/boss_gong.wav</li>
+<li>samples/hit/boss_meter_deactivate.wav</li>
+<li>samples/hit/boss_shield_hit.wav</li>
+<li>samples/hit/boss_shield_laser.wav</li>
+<li>samples/hit/boss_shield_shut2.wav</li>
+<li>samples/hit/boss_unlock1.wav</li>
+<li>samples/hit/ch-ds hit distorted 03.wav</li>
+<li>samples/hit/ch-ds hit distorted 04.wav</li>
+<li>samples/hit/CH-DS HIT Massive 01.wav</li>
+<li>samples/hit/CH-DS HIT Massive 04.wav</li>
+<li>samples/hit/ch-ds hit scifi 01.wav</li>
+<li>samples/hit/checkpoint_gong.wav</li>
+<li>samples/hit/checkpoint_pass.wav</li>
+<li>samples/hit/chimes.wav</li>
+<li>samples/hit/cm004_impact_low_boom.wav</li>
+<li>samples/hit/cm177_sweetener_sub_impact.wav</li>
+<li>samples/hit/crak_bonus_activate.wav</li>
+<li>samples/hit/crak_bonus_pound.wav</li>
+<li>samples/hit/damage_electricity.wav</li>
+<li>samples/hit/damage_sfx.wav</li>
+<li>samples/hit/damage.wav</li>
+<li>samples/hit/death_fall.wav</li>
+<li>samples/hit/death_fx.wav</li>
+<li>samples/hit/death_gong.wav</li>
+<li>samples/hit/final_pyramid_blow.wav</li>
+<li>samples/hit/french_horn_rip1.wav</li>
+<li>samples/hit/gate_unlocksci_fi01.wav</li>
+<li>samples/hit/gong_tunnel_entrance.wav</li>
+<li>samples/hit/grindable_birth2.wav</li>
+<li>samples/hit/grindable_combo2.wav</li>
+<li>samples/hit/heavy stomp.wav</li>
+<li>samples/hit/intro_rumble.wav</li>
+<li>samples/hit/kills.wav</li>
+<li>samples/hit/lane_switch.wav</li>
+<li>samples/hit/low-hit_unseenly_dark.wav</li>
+<li>samples/hit/low-hit_war_stomp.wav</li>
+<li>samples/hit/multiplier_loss.wav</li>
+<li>samples/hit/multiplier.wav</li>
+<li>samples/hit/pellet_pulse_slowdown.wav</li>
+<li>samples/hit/pellet_thump_fire.wav</li>
+<li>samples/hit/pellet_thump_lost.wav</li>
+<li>samples/hit/pellet_thump_spawn.wav</li>
+<li>samples/hit/pound_hit_initial1.wav</li>
+<li>samples/hit/pound_slowdown.wav</li>
+<li>samples/hit/sentry_end.wav</li>
+<li>samples/hit/sentry_thump.wav</li>
+<li>samples/hit/shell_capture.wav</li>
+<li>samples/hit/stinger_cymbal_rides.wav</li>
+<li>samples/hit/strafe.wav</li>
+<li>samples/hit/thump_birth1.wav</li>
+<li>samples/hit/thump_birth2.wav</li>
+<li>samples/hit/thump_hit_mixed.wav</li>
+<li>samples/hit/thump_lead_in2.wav</li>
+<li>samples/hit/thump_passed.wav</li>
+<li>samples/hit/thump1b.wav</li>
+<li>samples/hit/thump2.wav</li>
+<li>samples/hit/turn_birth_lft.wav</li>
+<li>samples/hit/turn_birth.wav</li>
+<li>samples/hit/turn_hit_perfect_flight_right.wav</li>
+<li>samples/hit/turn_hit_perfect_flight.wav</li>
+<li>samples/hit/turn_hit_perfect2.wav</li>
+<li>samples/hit/turn_long_lft.wav</li>
+<li>samples/hit/turn_strike.wav</li>
+<li>samples/horror_drones/color_shift.wav</li>
+<li>samples/horror_drones/fragile1.wav</li>
+<li>samples/horror_drones/gate_flap.wav</li>
+<li>samples/horror_drones/gate_thrust2.wav</li>
+<li>samples/horror_drones/intro_gate_whisper_of_distress.wav</li>
+<li>samples/horror_drones/rise_1.wav</li>
+<li>samples/horror_drones/rise_2.wav</li>
+<li>samples/interface/back_reverb.wav</li>
+<li>samples/interface/crak_collect4_reverb.wav</li>
+<li>samples/interface/pause1_reverb.wav</li>
+<li>samples/interface/pulse.wav</li>
+<li>samples/interface/pulse2_reverb.wav</li>
+<li>samples/interface/remap_removal.wav</li>
+<li>samples/interface/remap_restricted.wav</li>
+<li>samples/interface/score_countup.wav</li>
+<li>samples/interface/slide_vertical_reverb.wav</li>
+<li>samples/interface/slide1_reverb.wav</li>
+<li>samples/interface/thump_miss_reverb.wav</li>
+<li>samples/interface/title_screen_reverb.wav</li>
+<li>samples/intro/intro_1.wav</li>
+<li>samples/intro/intro_2.wav</li>
+<li>samples/intro/intro_3.wav</li>
+<li>samples/intro/intro_4.wav</li>
+<li>samples/intro/intro_rumble.wav</li>
+<li>samples/jump_high.wav</li>
+<li>samples/jump.wav</li>
+<li>samples/levels/demo/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/demo/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/demo/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/demo/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/demo/drones/crakhed_intro_pattern4.wav</li>
+<li>samples/levels/demo/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/demo/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/demo/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/demo/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/demo/drums/drums_crakhed_pattern1.wav</li>
+<li>samples/levels/demo/drums/drums_crakhed_pattern2.wav</li>
+<li>samples/levels/demo/drums/drums_crakhed_pattern3.wav</li>
+<li>samples/levels/demo/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/demo/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/demo/drums/drums_sparse_pattern3.wav</li>
+<li>samples/levels/demo/drums/drums_sparse_pattern4.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern1.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern2.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern3.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern4.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern5.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern6.wav</li>
+<li>samples/Levels/global_drones/beneath_ice_pattern7.wav</li>
+<li>samples/levels/global_drones/crakhed_thunder1.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern07.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern08.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern09.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern10.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern11.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern12.wav</li>
+<li>samples/levels/global_drones/dirty_cello_drones/dirty_cello_pattern13.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern1.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern10.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern11.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern12.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern13.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern14.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern15.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern16.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern17.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern2.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern3.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern4.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern5.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern6.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern7.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern8.wav</li>
+<li>samples/levels/global_drones/dissonant_blast/pattern9.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern1.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern10.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern11.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern12.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern13.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern14.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern15.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern16.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern17.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern2.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern3.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern4.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern5.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern6.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern7.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern8.wav</li>
+<li>samples/levels/global_drones/french_horn_chords/pattern9.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern1.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern10.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern11.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern12.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern13.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern14.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern15.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern16.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern17.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern2.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern3.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern4.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern5.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern6.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern7.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern8.wav</li>
+<li>samples/levels/global_drones/french_horn_notes/pattern9.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern1.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern10.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern11.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern12.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern13.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern14.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern15.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern16.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern17.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern2wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern3.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern4.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern5.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern6.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern7.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern8.wav</li>
+<li>samples/levels/global_drones/french_horn_swell_short/pattern9.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern10.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern11.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern12.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern13.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern14.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern15.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern16.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern17.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern2.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern3.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern4.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern5.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern6.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern7.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern8.wav</li>
+<li>samples/levels/global_drones/french_horn_swell/pattern9.wav</li>
+<li>samples/levels/global_drones/gongs/crash1.wav</li>
+<li>samples/levels/global_drones/gongs/crash2.wav</li>
+<li>samples/levels/global_drones/gongs/pattern1.wav</li>
+<li>samples/levels/global_drones/gongs/pattern2.wav</li>
+<li>samples/levels/global_drones/gongs/pattern3.wav</li>
+<li>samples/levels/global_drones/orchestra_clusters_pattern1.wav</li>
+<li>samples/Levels/global_drones/orchestral_dissonance_pattern4.wav</li>
+<li>samples/levels/global_drones/orchestral_dissonance_pattern5.wav</li>
+<li>samples/levels/global_drones/orchestral_dissonance_pattern6.wav</li>
+<li>samples/levels/global_drones/orchestral_dissonance_pattern7.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern1.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern10.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern11.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern12.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern13.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern14.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern15.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern16.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern2.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern3.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern4.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern5.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern6.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern7.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern8.wav</li>
+<li>samples/levels/global_drones/rises_once/pattern9.wav</li>
+<li>samples/levels/global_drones/rises/ending_rise.wav</li>
+<li>samples/levels/global_drones/rises/rise1.wav</li>
+<li>samples/levels/global_drones/rises/rise2.wav</li>
+<li>samples/levels/global_drones/rises/rise3.wav</li>
+<li>samples/levels/global_drones/rises/rise4.wav</li>
+<li>samples/levels/global_drones/rises/rise5.wav</li>
+<li>samples/levels/global_drones/rises/rise6.wav</li>
+<li>samples/levels/global_drones/rises/rise7.wav</li>
+<li>samples/levels/global_drones/rises/rise8.wav</li>
+<li>samples/levels/global_drones/string_bass_pattern1.wav</li>
+<li>samples/levels/global_drones/swooshes/anvil_and_formula.wav</li>
+<li>samples/levels/global_drones/swooshes/buzz_tight_yeah.wav</li>
+<li>samples/levels/global_drones/swooshes/d_wing.wav</li>
+<li>samples/levels/global_drones/swooshes/death_arrow.wav</li>
+<li>samples/levels/global_drones/swooshes/final_brass.wav</li>
+<li>samples/levels/global_drones/swooshes/formula_frenzy.wav</li>
+<li>samples/levels/global_drones/swooshes/hello_earth.wav</li>
+<li>samples/levels/global_drones/swooshes/ice_rocket.wav</li>
+<li>samples/levels/global_drones/swooshes/messerschmitt.wav</li>
+<li>samples/levels/global_drones/swooshes/mouth_shut.wav</li>
+<li>samples/levels/global_drones/swooshes/piano.wav</li>
+<li>samples/levels/global_drones/swooshes/racing_deep_backfire.wav</li>
+<li>samples/levels/global_drones/swooshes/solid_smack.wav</li>
+<li>samples/levels/global_drones/swooshes/sonic_wall.wav</li>
+<li>samples/levels/global_drones/swooshes/tango_down.wav</li>
+<li>samples/Levels/global_drones/violins_pattern1.wav</li>
+<li>samples/Levels/global_drones/violins_pattern2.wav</li>
+<li>samples/Levels/global_drones/violins_pattern3.wav</li>
+<li>samples/Levels/global_drones/violins_pattern4.wav</li>
+<li>samples/Levels/global_drones/violins_pattern5.wav</li>
+<li>samples/Levels/global_drones/violins_pattern6.wav</li>
+<li>samples/Levels/global_drones/violins_pattern7.wav</li>
+<li>samples/levels/global_drones/xenakis_pattern1.wav</li>
+<li>samples/levels/global_drones/xenakis_pattern2.wav</li>
+<li>samples/levels/global_drones/xenakis_pattern3.wav</li>
+<li>samples/levels/global_drones/xenakis_pattern4.wav</li>
+<li>samples/levels/level_10/noise_rhythms/noise_rhythms1.wav</li>
+<li>samples/levels/level_10/noise_rhythms/noise_rhythms2.wav</li>
+<li>samples/levels/level_10/noise_rhythms/pattern2a.wav</li>
+<li>samples/levels/level_2/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_2/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_2/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_2/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_2/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_2/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_2/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/levels/level_2/drones/level_drone_pattern1.wav</li>
+<li>samples/levels/level_2/drones/orchestra_cluster_patt1.wav</li>
+<li>samples/levels/level_2/drones/orchestra_cluster_patt2.wav</li>
+<li>samples/levels/level_2/drones/orchestra_cluster_patt3.wav</li>
+<li>samples/levels/level_2/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_2/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_2/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_2/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_2/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_2/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_2/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_2/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_2/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_2/drums/drums_jagged_pattern4_sparse.wav</li>
+<li>samples/levels/level_2/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_2/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_2/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/Levels/Level_2/Drums/drums_seven_rock_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_short_pattern1_sparse.wav</li>
+<li>samples/levels/level_2/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_2/drums/drums_short_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_2/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_2/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_2/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/level_2/drums/drums_sparse_pattern3.wav</li>
+<li>samples/levels/level_2/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_2/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_2/drums/pattern3.wav</li>
+<li>samples/levels/level_2/drums/rise1.wav</li>
+<li>samples/levels/level_2/drums/timpani2.wav</li>
+<li>samples/levels/level_3/arpeggios/arpeggio1_drums_pattern6.wav</li>
+<li>samples/levels/level_3/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_3/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_3/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_3/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_3/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_3/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_3/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/levels/level_3/drones/level_drone_pattern1.wav</li>
+<li>samples/Levels/Level_3/drones/melody1.wav</li>
+<li>samples/levels/level_3/drones/pulses_pattern1.wav</li>
+<li>samples/levels/level_3/drones/pulses_pattern2.wav</li>
+<li>samples/levels/level_3/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_3/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_3/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_3/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_3/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_3/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_3/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_3/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_3/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_3/drums/drums_jagged_pattern5.wav</li>
+<li>samples/levels/level_3/drums/drums_jagged_trance1.wav</li>
+<li>samples/levels/level_3/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_3/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_3/drums/drums_long_pattern4.wav</li>
+<li>samples/Levels/Level_3/drums/drums_seven_rock_battery.wav</li>
+<li>samples/Levels/Level_3/drums/drums_seven_rock_battery2.wav</li>
+<li>samples/levels/level_3/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_short_pattern1_sparse.wav</li>
+<li>samples/levels/level_3/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_short_pattern2.wav</li>
+<li>samples/levels/level_3/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_3/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_3/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_3/drums/drums_sparse_pattern3.wav</li>
+<li>samples/levels/level_3/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_3/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_3/drums/pound_tutorial.wav</li>
+<li>samples/levels/level_3/drums/timpani.wav</li>
+<li>samples/levels/level_4/drones/boss_drones_pattern1.wav</li>
+<li>samples/levels/level_4/drones/boss_drones_pattern2.wav</li>
+<li>samples/levels/level_4/drones/boss_drones_pattern3.wav</li>
+<li>samples/levels/level_4/drones/crakhed_drones_pattern1.wav</li>
+<li>samples/levels/level_4/drones/crakhed_drones_pattern2.wav</li>
+<li>samples/levels/level_4/drones/crakhed_drones_pattern3.wav</li>
+<li>samples/levels/level_4/drones/crakhed_drones_pattern4.wav</li>
+<li>samples/levels/level_4/drones/orchestra_clusters_patt1.wav</li>
+<li>samples/levels/level_4/drones/orchestra_clusters_patt2.wav</li>
+<li>samples/levels/level_4/drones/orchestra_clusters_patt3.wav</li>
+<li>samples/levels/level_4/drones/pulses_pattern1.wav</li>
+<li>samples/levels/level_4/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_4/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_4/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_4/drums/crakhed_pattern4.wav</li>
+<li>samples/Levels/Level_4/Drums/drums_seven_rock_battery1.wav</li>
+<li>samples/levels/level_4/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/levels/level_4/drums/rhythm_boss_pattern1_sparse.wav</li>
+<li>samples/levels/level_4/drums/rhythm_boss_pattern1_sparse2.wav</li>
+<li>samples/levels/level_4/drums/rhythm_boss_pattern1_sparse3.wav</li>
+<li>samples/levels/level_4/drums/rhythm_boss_pattern3.wav</li>
+<li>samples/levels/level_4/drums/rhythm_jagged_pattern1.wav</li>
+<li>samples/levels/level_4/drums/rhythm_jagged_pattern2.wav</li>
+<li>samples/levels/level_4/drums/rhythm_jagged_pattern3.wav</li>
+<li>samples/levels/level_4/drums/rhythm_jagged_trance.wav</li>
+<li>samples/levels/level_4/drums/rhythm_long_pattern1.wav</li>
+<li>samples/levels/level_4/drums/rhythm_short_pattern1_short.wav</li>
+<li>samples/levels/level_4/drums/rhythm_short_pattern1.wav</li>
+<li>samples/levels/level_4/drums/rhythm_short_pattern2.wav</li>
+<li>samples/levels/level_4/drums/rhythm_short_pattern3.wav</li>
+<li>samples/levels/level_4/drums/rhythm_short_pattern4.wav</li>
+<li>samples/levels/level_4/drums/rhythm_sparse_pattern5.wav</li>
+<li>samples/levels/level_4/drums/special1.wav</li>
+<li>samples/Levels/Level_4/Drums/timpani1_taico1_cropped.wav</li>
+<li>samples/levels/level_4/drums/timpani1.wav</li>
+<li>samples/levels/level_5/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_5/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_5/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_5/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_5/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_5/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_5/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/levels/level_5/drones/dissonance_pattern1.wav</li>
+<li>samples/levels/level_5/drones/dissonance_pattern2.wav</li>
+<li>samples/levels/level_5/drones/level_drone_pattern1.wav</li>
+<li>samples/levels/level_5/drones/orchestra_clusters_pattern2.wav</li>
+<li>samples/levels/level_5/drones/orchestra_clusters_pattern3.wav</li>
+<li>samples/levels/level_5/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_5/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_5/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_5/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_5/drums/dragon1.wav</li>
+<li>samples/levels/level_5/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_5/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_5/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_5/drums/drums_boss_trance1.wav</li>
+<li>samples/levels/level_5/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_5/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_5/drums/drums_jagged_pattern4.wav</li>
+<li>samples/levels/level_5/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_5/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_5/drums/drums_long_pattern4.wav</li>
+<li>samples/levels/level_5/drums/drums_long_pattern5.wav</li>
+<li>samples/levels/level_5/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_short_pattern2.wav</li>
+<li>samples/levels/level_5/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_5/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_5/drums/drums_short_trance1.wav</li>
+<li>samples/levels/level_5/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_5/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/level_5/drums/drums_sparse_pattern3.wav</li>
+<li>samples/levels/level_5/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_5/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_5/drums/timpani1.wav</li>
+<li>samples/levels/level_6/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_6/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_6/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_6/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_6/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_6/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_6/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/Levels/Level_6/drones/dissonance_pattern1.wav</li>
+<li>samples/levels/level_6/drones/dissonance_pattern3.wav</li>
+<li>samples/levels/level_6/drones/dissonance_pattern4.wav</li>
+<li>samples/levels/level_6/drones/level_drone_pattern1.wav</li>
+<li>samples/levels/level_6/drones/orchestra_clusters_patt1.wav</li>
+<li>samples/levels/level_6/drones/pulses_pattern1.wav</li>
+<li>samples/levels/level_6/drones/pulses_pattern2.wav</li>
+<li>samples/levels/level_6/drones/turn_anticipation_pattern1.wav</li>
+<li>samples/levels/level_6/drones/turn_anticipation_pattern2.wav</li>
+<li>samples/levels/level_6/drones/turn_anticipation_pattern3.wav</li>
+<li>samples/levels/level_6/drones/turn_anticipation_pattern4.wav</li>
+<li>samples/levels/level_6/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_6/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_6/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_6/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_6/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_6/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_6/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_6/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_6/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_6/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_6/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_6/drums/drums_jagged_pattern5.wav</li>
+<li>samples/levels/level_6/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_6/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_6/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_6/drums/drums_long_pattern4.wav</li>
+<li>samples/Levels/Level_6/drums/drums_seven_rock_battery_12.wav</li>
+<li>samples/Levels/Level_6/drums/drums_seven_rock_battery1.wav</li>
+<li>samples/levels/level_6/drums/drums_seven_rock_pound_tutorial.wav</li>
+<li>samples/levels/level_6/drums/drums_seven_rock.wav</li>
+<li>samples/levels/level_6/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_6/drums/drums_short_pattern2.wav</li>
+<li>samples/levels/level_6/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_6/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_6/drums/drums_short_pattern5.wav</li>
+<li>samples/levels/level_6/drums/drums_short_trance.wav</li>
+<li>samples/levels/level_6/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_6/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_6/drums/drums_stutter1.wav</li>
+<li>samples/levels/level_6/drums/timpani2.wav</li>
+<li>samples/levels/level_7/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_7/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_7/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_7/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_7/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_7/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_7/drones/orchestra_clusters_patt1.wav</li>
+<li>samples/levels/level_7/drones/orchestra_clusters_patt2.wav</li>
+<li>samples/levels/level_7/drones/orchestra_clusters_patt3.wav</li>
+<li>samples/levels/level_7/drones/pulses_pattern2.wav</li>
+<li>samples/levels/level_7/drones/turn_anticipation_pattern1.wav</li>
+<li>samples/levels/level_7/drones/turn_anticipation_pattern2.wav</li>
+<li>samples/levels/level_7/drones/turn_anticipation_pattern3.wav</li>
+<li>samples/levels/level_7/drones/turn_anticipation_pattern4.wav</li>
+<li>samples/levels/level_7/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_7/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_7/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_7/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_7/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_7/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_7/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_7/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_7/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_7/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_7/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_7/drums/drums_jagged_pattern5.wav</li>
+<li>samples/levels/level_7/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_7/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_7/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_7/drums/drums_long_pattern4.wav</li>
+<li>samples/levels/level_7/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_7/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_7/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_7/drums/drums_short_pattern5_trance1.wav</li>
+<li>samples/levels/level_7/drums/drums_short_trance2.wav</li>
+<li>samples/levels/level_7/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_7/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/level_7/drums/drums_sparse_pattern3.wav</li>
+<li>samples/levels/level_7/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_7/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_7/drums/timpani1.wav</li>
+<li>samples/levels/level_8/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_8/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_8/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_8/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_8/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_8/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_8/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/levels/level_8/drones/orchestra_clusters_patt1.wav</li>
+<li>samples/levels/level_8/drones/orchestra_clusters_patt2.wav</li>
+<li>samples/levels/level_8/drones/orchestra_clusters_patt3.wav</li>
+<li>samples/levels/level_8/drones/pulse_pattern1.wav</li>
+<li>samples/levels/level_8/drones/pulse_pattern2.wav</li>
+<li>samples/levels/level_8/drones/turn_anticipation_pattern1.wav</li>
+<li>samples/levels/level_8/drones/turn_anticipation_pattern2.wav</li>
+<li>samples/levels/level_8/drones/turn_anticipation_pattern3.wav</li>
+<li>samples/levels/level_8/drones/turn_anticipation_pattern4.wav</li>
+<li>samples/levels/level_8/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_8/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_8/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_8/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_pattern1_sparse.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_pattern2_sparse.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_8/drums/drums_boss_trance1.wav</li>
+<li>samples/levels/level_8/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_8/drums/drums_jagged_pattern5.wav</li>
+<li>samples/levels/level_8/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_8/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_8/drums/drums_long_pattern4.wav</li>
+<li>samples/levels/level_8/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/levels/level_8/drums/drums_seven_rock_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_8/drums/drums_short_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_short_pattern3.wav</li>
+<li>samples/levels/level_8/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_8/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/level_8/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_8/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_8/drums/drums_special1.wav</li>
+<li>samples/levels/level_8/drums/drums_stutter1.wav</li>
+<li>samples/levels/level_8/drums/timpani.wav</li>
+<li>samples/levels/level_8/rises/scream1.wav</li>
+<li>samples/levels/level_9/drones/boss_drone_pattern1.wav</li>
+<li>samples/levels/level_9/drones/boss_drone_pattern2.wav</li>
+<li>samples/levels/level_9/drones/boss_drone_pattern3.wav</li>
+<li>samples/levels/level_9/drones/crakhed_drone_pattern1.wav</li>
+<li>samples/levels/level_9/drones/crakhed_drone_pattern2.wav</li>
+<li>samples/levels/level_9/drones/crakhed_drone_pattern3.wav</li>
+<li>samples/levels/level_9/drones/crakhed_drone_pattern4.wav</li>
+<li>samples/levels/level_9/drones/orchestra_clusters_patt1.wav</li>
+<li>samples/levels/level_9/drones/orchestra_clusters_patt2.wav</li>
+<li>samples/levels/level_9/drones/orchestra_clusters_patt3.wav</li>
+<li>samples/levels/level_9/drones/pulses_pattern1.wav</li>
+<li>samples/levels/level_9/drones/pulses_pattern2.wav</li>
+<li>samples/levels/level_9/drums/crakhed_pattern1.wav</li>
+<li>samples/levels/level_9/drums/crakhed_pattern2.wav</li>
+<li>samples/levels/level_9/drums/crakhed_pattern3.wav</li>
+<li>samples/levels/level_9/drums/crakhed_pattern4.wav</li>
+<li>samples/levels/level_9/drums/crakhed_pattern5.wav</li>
+<li>samples/levels/level_9/drums/drums_boss_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_boss_pattern2.wav</li>
+<li>samples/levels/level_9/drums/drums_boss_pattern3.wav</li>
+<li>samples/levels/level_9/drums/drums_boss_pattern4.wav</li>
+<li>samples/levels/level_9/drums/drums_jagged_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_jagged_pattern2.wav</li>
+<li>samples/levels/level_9/drums/drums_jagged_pattern3.wav</li>
+<li>samples/levels/level_9/drums/drums_jagged_trance1.wav</li>
+<li>samples/levels/level_9/drums/drums_long_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_long_pattern2.wav</li>
+<li>samples/levels/level_9/drums/drums_long_pattern3.wav</li>
+<li>samples/levels/level_9/drums/drums_long_pattern4.wav</li>
+<li>samples/levels/level_9/drums/drums_seven_rock_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_short_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_short_pattern4.wav</li>
+<li>samples/levels/level_9/drums/drums_short_pattern8.wav</li>
+<li>samples/levels/level_9/drums/drums_sparse_pattern1.wav</li>
+<li>samples/levels/level_9/drums/drums_sparse_pattern2.wav</li>
+<li>samples/levels/level_9/drums/drums_sparse_pattern4.wav</li>
+<li>samples/levels/level_9/drums/drums_sparse_pattern5.wav</li>
+<li>samples/levels/level_9/drums/pattern2.wav</li>
+<li>samples/levels/level_9/drums/timpani.wav</li>
+<li>samples/Levels/rests/rest_level2a.wav</li>
+<li>samples/Levels/rests/rest_level2b.wav</li>
+<li>samples/Levels/rests/rest_level3a.wav</li>
+<li>samples/Levels/rests/rest_level3b.wav</li>
+<li>samples/Levels/rests/rest_level4a.wav</li>
+<li>samples/Levels/rests/rest_level4b.wav</li>
+<li>samples/Levels/rests/rest_level5a.wav</li>
+<li>samples/Levels/rests/rest_level5b.wav</li>
+<li>samples/Levels/rests/rest_level6a.wav</li>
+<li>samples/Levels/rests/rest_level6b.wav</li>
+<li>samples/Levels/rests/rest_level7a.wav</li>
+<li>samples/Levels/rests/rest_level7b.wav</li>
+<li>samples/Levels/rests/rests_level8a.wav</li>
+<li>samples/Levels/rests/rests_level8b.wav</li>
+<li>samples/Levels/rests/rests_level9a.wav</li>
+<li>samples/Levels/rests/rests_level9b.wav</li>
+<li>samples/logo_song/french_horn_opening_line.wav</li>
+<li>samples/logo_song/french_horn_opening_line2.wav</li>
+<li>samples/logo_song/logo_song.wav</li>
+<li>samples/logo_song/pyramid_horn_theme.wav</li>
+<li>samples/metallic/broadsword_draw_scrape.wav</li>
+<li>samples/metallic/carving_sword_scrape.wav</li>
+<li>samples/metallic/hammer_two_handed_hit.wav</li>
+<li>samples/metallic/lane_switch.wav</li>
+<li>samples/metallic/medium_sword_draw.wav</li>
+<li>samples/metallic/saber_medium_sheath_sword_medium_hit.wav</li>
+<li>samples/metallic/small_hammer_knife.wav</li>
+<li>samples/metallic/two_handed_sword_scrape_end.wav</li>
+<li>samples/metallic/whoosh_dagger.wav</li>
+<li>samples/metallic/whoosh_knife.wav</li>
+<li>samples/metallic/whoosh_sword_large.wav</li>
+<li>samples/orchestral/igf_orchestral/igf_orchestral_drone1.wav</li>
+<li>samples/orchestral/orchestral_tutorial_set/tutorial3.wav</li>
+<li>samples/orchestral/thump_tutorials/preturn_strings_double.wav</li>
+<li>samples/orchestral/thump_tutorials/preturn_strings.wav</li>
+<li>samples/orchestral/tutorial_rhythm_set/tut_rhythm_bass_pulse.wav</li>
+<li>samples/orchestral/tutorial_rhythm_set/tut_rhythm_strings.wav</li>
+<li>samples/orchestral/tutorial_rhythm_set/tut_rhythm_trumpet_pulse.wav</li>
+<li>samples/rail_drone_low.wav</li>
+<li>samples/rises/32_beat_white_noise_rise.wav</li>
+<li>samples/rises/rises_violins_pattern1.wav</li>
+<li>samples/rises/rises_violins_pattern2.wav</li>
+<li>samples/rises/rises_violins_pattern3.wav</li>
+<li>samples/rises/rises_violins_pattern4.wav</li>
+<li>samples/rises/rises_violins_pattern5.wav</li>
+<li>samples/rises/tunnel_entrance1.wav</li>
+<li>samples/rises/tunnel_exit2.wav</li>
+<li>samples/songs/songs_set1/flutter_drone.wav</li>
+<li>samples/songs/songs_set1/grind_drone.wav</li>
+<li>samples/songs/songs_set1/scrape_drone.wav</li>
+<li>samples/Swish/boss_tunnel_swoosh.wav</li>
+<li>samples/Swish/tunnel1_black_dust.wav</li>
+<li>samples/swish/tunnel2_whoosh_breeze.wav</li>
+<li>samples/Swish/tunnel3_Dwing.wav</li>
+<li>samples/Swish/tunnel4_formula_frenzy.wav</li>
+<li>samples/Swish/tunnel5_lexicorn.wav</li>
+<li>samples/Swish/tunnel6_messershmitt.wav</li>
+<li>samples/Swish/tunnel7_pressure_on.wav</li>
+<li>samples/Swish/tunnel8_spaceship_pass.wav</li>
+<li>samples/Swish/tunnel9_speedwheel.wav</li>
+<li>samples/swish/white_noise_straight1.wav</li>
+<li>samples/tutorial_countdown.wav</li>
+<li>samples/violins/dissonant1.wav</li>
+<li>samples/violins/dissonant2.wav</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../undoc_headers/" class="btn btn-neutral float-left" title="Undocumented Definition Headers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ui_thumper_scoring/" class="btn btn-neutral float-right" title="ui_thumper.scoring">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../undoc_headers/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ui_thumper_scoring/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/magic_numbers/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>List - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "List";
+        var mkdocs_page_input_path = "thumper\\magic_numbers.md";
+        var mkdocs_page_url = "/aurora/thumper/magic_numbers/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Magic Numbers</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">List</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#hash-function">Hash Function</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prologue">Prologue</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#epilogue">Epilogue</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#loop-fnv1a">Loop / fnv1a</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-hashes-are-computed">How hashes are computed</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#single-function-implementaiton">Single function implementaiton</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#thumper-binary-details">Thumper Binary Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#function-signitures">Function signitures</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#list-of-magic-numbers">List of Magic Numbers</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Magic Numbers</li>
+      <li class="breadcrumb-item active">List</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/magic_numbers.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="magic-numbers">Magic Numbers</h1>
+<p>A magic number is a 32-bit hash value produced by applying a hash function on a ~~string~~ series of bytes. Hash tables are maintained in the game executable storing the hash values for string literals like game file paths, object types and parameter names. This is probably done to avoid expensive string comparisons and allow a more compact way of packing the binary game files.</p>
+<h2 id="hash-function">Hash Function</h2>
+<p>Thumper's hash function is split into three parts:
+1. Prologue - Performed once per hash
+2. Loop - Performed one or more times per hash
+3. Epilogie - Performed once per hash</p>
+<p>These functions <strong>NO NOT</strong> match the function signitures exactly as seen in the executable, but they are written in a way thats close. See the <code>thumper binary</code> section below for accurate function signitures.</p>
+<h3 id="prologue">Prologue</h3>
+<pre><code class="language-cpp">void prologue(std::uint32_t&amp; value) {
+    value = 0x811c9dc5;
+}
+</code></pre>
+<h3 id="epilogue">Epilogue</h3>
+<pre><code class="language-cpp">void epilogue(std::uint32_t&amp; value) {
+    value *= 0x2001;
+    value = (value ^ (value &gt;&gt; 0x7)) * 0x9;
+    value = (value ^ (value &gt;&gt; 0x11)) * 0x21;
+}
+</code></pre>
+<h3 id="loop-fnv1a">Loop / fnv1a</h3>
+<pre><code class="language-cpp">void fnv1a(std::uint32_t&amp; value, std::span&lt;std::byte const&gt; bytes) {
+    for (auto const&amp; byte : bytes) {
+        value ^= static_cast&lt;std::uint32_t&gt;(byte);
+        value *= 0x1000193;
+    }
+}
+</code></pre>
+<h2 id="how-hashes-are-computed">How hashes are computed</h2>
+<p>Thumper never explicitly affixes an input string into the hash, rather this is implemented by invoking the internal loop for each section of the hash. Hash inputs may be non ascii. When implementing a hash function, make sure it can handle non-ascii.</p>
+<p>Current there are 1, 2 and 7 known iteration counts for hashing.</p>
+<p>An example of a 1 iteration hash is <code>turn</code>. The prologue is called, the fnv1a is called once and the epilogue is called once.</p>
+<p>For hashing file paths the most common situation is a 2 iteration hash. For example take <code>levels/demo.objlib</code>. First the prologue is invoked. Then fnv1a is called with <code>A</code>. fnv1a is then invoked again with <code>levels/demo.objlib</code>. <em>Important</em>: When multiple iterations are invoked, the prologue or epoligue are <strong>not</strong> invoked between them.</p>
+<p>This is effectivly the same as directly hashing <code>Alevels/demo.objlib</code> but is faster compute without doing string concatenation.</p>
+<p>The other known iteration case is 7: This is primarily seen with <code>.x</code> files.</p>
+<p>For example to get the correct hash for <code>avatar/shell_right_eye_bulge.x</code>. Thumper will perform hashing in the following order: <code>A</code>, <code>avatar/shell_right_eye_bulge.x</code>, <code>\x9A\x99\x99\x3E</code>, <code>\x00\x00\x00\x00</code>, <code>\x00\x00\x00\x00</code>, <code>\x00</code>, <code>\x01\x00\x00\x00</code>. Effectivly the same as: <code>Aavatar/shell_right_eye_bulge.x\x9A\x99\x99\x3E\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00</code></p>
+<p>The specifics on why this happens are still unknown.</p>
+<h2 id="single-function-implementaiton">Single function implementaiton</h2>
+<pre><code class="language-cpp">void hash32(std::uint32_t&amp; value, std::string_view bytes) {
+    // Prologue
+    std::uint32_t h = 0x811c9dc5;
+
+    // fnv1a
+    for (auto const&amp; byte : bytes) {
+        value = (value ^ static_cast&lt;std::uint32_t&gt;(byte)) * 0x1000193;
+    }
+
+    // Epilogue
+    value *= 0x2001;
+
+    value = value ^ (value &gt;&gt; 0x7);
+    value *= 0x9;
+    value = value ^ (value &gt;&gt; 0x11);
+    value *= 0x21;
+}
+</code></pre>
+<h2 id="thumper-binary-details">Thumper Binary Details</h2>
+<p>After patching the thumper binary, the function entrypoints can be located at the following .text segment offsets:
+* <code>thump_hash_prologue_811c9dc5 : 0x00007FF66AB1FA90</code>
+* <code>thump_hash_loop : 0x00007FF66AB1FAB0</code>
+* <code>thump_hash_epilogue : 0x00007FF66AB1FA70</code>
+* <code>thump_hash_epilogue_stub : 00007FF66AB1FA50</code></p>
+<h3 id="function-signitures">Function signitures</h3>
+<h2 id="list-of-magic-numbers">List of Magic Numbers</h2>
+<p>Here is a list of different magic numbers used in Thumper game files.
+* <a href="../hashed_file_names/">Hashed File Names</a>
+* <a href="../objlib_gen_structure/#types-of-objlib-files">Types of .objlib Files</a>
+* <a href="../object_types/">Object Types</a>
+* <a href="../object_param_selectors/">Object/Parameter Selectors</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../trait_values/" class="btn btn-neutral float-left" title="Trait Values"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../hashed_file_names/" class="btn btn-neutral float-right" title="Hashed File Names">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../trait_values/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../hashed_file_names/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/leaf/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>.leaf Objects - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = ".leaf Objects";
+        var mkdocs_page_input_path = "thumper\\leaf.md";
+        var mkdocs_page_url = "/aurora/thumper/leaf/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Objects</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">.leaf Objects</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#parameter-list">Parameter List</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#format">Format</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trait">Trait</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datapointt">Datapoint\&lt;T></a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#footnotes">Footnotes</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Objects</li>
+      <li class="breadcrumb-item active">.leaf Objects</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/leaf.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="leaf-objects">.leaf Objects</h1>
+<p>For <a href="../objlib_level_structure/">level .objlib files</a>, a .leaf Object (or SequinLeaf Object) represents a short pattern within a sub-level in the game. Each .leaf Object contains multiple <a href="../seqin_objects/">Sequencer Objects</a> that change the parameter values of different objects, including the .leaf Object itself, over the course of the pattern. The Sequencer Objects collectively define the events occurring during the pattern, such as the twisting and turning of the track, at what time thumps, red bars, blue rings, jumps and decorative objects appear on or around the track, the color changes of the skybox and post effects, at what time one-off samples are played, etc.</p>
+<p>The following screenshot shows a modified version of the .leaf Object named <code>drums_short_pattern2.leaf</code>, from <code>levels/Level6/level_6.objlib</code>.</p>
+<p><img alt="modified version of the .leaf Object named drums_short_pattern2.leaf, from levels/Level6/level_6.objlib" src="../../content/leaf.png" /></p>
+<p>For sequin .objlib files, each of the .leaf Objects defines which objects and parameters are changed over the course of an animation.</p>
+<h2 id="parameter-list">Parameter List</h2>
+<p>The following is a list of known <a href="../object_param_selectors/">parameters</a> belonging directly to a .leaf Object.</p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Value (little-endian)</th>
+<th>Parameter Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>90db6c5c</code></td>
+<td>pitch</td>
+<td>Controls the pitch angle of the track, expressed in degrees. A positive value raises the track; a negative value lowers the track.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>461da26a</code></td>
+<td>roll</td>
+<td>Controls the roll angle of the track, expressed in degrees. A positive value rolls the track clockwise; a negative value rolls the track anticlockwise.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>659c0bb8</code></td>
+<td>turn</td>
+<td>Controls the turn angle θturn[^latex]​, or yaw angle, of the track, expressed in degrees. A positive value means turn left; a negative value means turn right. If ∣θturn∣≥15°[^latex] per beat, player input is required for the turn. A short turn is a turn that requires player input and lasts for one beat only; a long turn is one that requires player input and lasts for two consecutive beats or more.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>1e470b5d</code></td>
+<td>turn_auto</td>
+<td>Same as turn, except it is guaranteed that no player input is required.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>b44b9ff1</code></td>
+<td>scale_x</td>
+<td>Controls the scale scalex[^latex]​ of the track in x[^latex]-axis. 0&lt;scalex&lt;1[^latex] decreases the track size along the x[^latex]-axis; scalex&gt;1[^latex] increases the track size.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>5c01c2b9</code></td>
+<td>scale_y</td>
+<td>Controls the scale scaley[^latex]​ of the track in y[^latex]-axis. 0&lt;scaley&lt;1[^latex] decreases the track size along the y[^latex]-axis; scaley&gt;1[^latex] increases the track size.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>2794bcce</code></td>
+<td>scale_z</td>
+<td>Controls the scale scalez[^latex]​ of the track in z[^latex]-axis. 0&lt;scalez&lt;1[^latex] decreases the track size along the z[^latex]-axis; scalez&gt;1[^latex] increases the track size.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>2e08b151</code></td>
+<td>offset_x</td>
+<td>Controls the offset of the track in x[^latex]-axis.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>fa4ab34f</code></td>
+<td>offset_y</td>
+<td>Controls the offset of the track in y[^latex]-axis.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#float32">float32</a></td>
+<td><code>1ff804bc</code></td>
+<td>offset_z</td>
+<td>Controls the offset of the track in z[^latex]-axis.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>48697144</code></td>
+<td>visibla01</td>
+<td>Controls the visibility of the leftmost track in a multi-lane section. See the visible parameter for details.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>842a58fa</code></td>
+<td>visibla02</td>
+<td>Controls the visibility of the second leftmost track in a multi-lane section. See the visible parameter for details.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>a444acf9</code></td>
+<td>visible</td>
+<td>Controls the visibility of the center track in a multi-lane section. This is the same default track used in single lane sections. Consecutive values of <code>1</code> represent the presence of the lane; consecutive values of <code>0</code> represent its absence. A transition from <code>1</code> to <code>0</code> represents a lane end; a transition from <code>0</code> to <code>1</code> represents a lane start. When a lane ends, the direction of the lane-end turn is determined by whether there is a visible track on its left or on its right. The two lanes on both sides of a starting or ending lane cannot be both visible or both invisible.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>93dcfe04</code></td>
+<td>visiblz01</td>
+<td>Controls the visibility of the second rightmost track in a multi-lane section. See the visible parameter for details.</td>
+</tr>
+<tr>
+<td><a href="../data_types/#bool">bool</a></td>
+<td><code>7ce4037d</code></td>
+<td>visiblz02</td>
+<td>Controls the visibility of the rightmost track in a multi-lane section. See the visible parameter for details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format">Format</h2>
+<h3 id="overview">Overview</h3>
+<pre><code>u32 header[4];
+u32 hash;
+u32 unknown;
+u32 hash;
+str timeUnit;
+u32 hash;
+vec&lt;Trait&gt; traits;
+u32 unknown;
+u32 beatCount;
+vec3&lt;f32&gt; unknown[beatCount];
+u32 unknown;
+u32 unknown;
+u32 unknown;
+</code></pre>
+<h3 id="trait">Trait</h3>
+<pre><code>str object;
+u32 unknown;
+u32 subojectHash;
+s32 selectorShareIdx;
+u32 datatype;
+vec&lt;Datapoint&lt;datatype&gt;&gt; datapoints;
+vec&lt;Datapoint&lt;datatype&gt;&gt; editorDatapoints;
+u32 unknown[5];
+str intensity[2];
+u8 unknown;
+u8 unknown;
+u32 unknown;
+f32 unknown[5];
+u8 unknown[3];
+</code></pre>
+<h3 id="datapointt">Datapoint\&lt;T&gt;</h3>
+<pre><code>f32 time;
+T value; // Depends on the datatype being used
+str interpolation;
+str easing;
+</code></pre>
+<h2 id="footnotes">Footnotes</h2>
+<p>[^latex]: This should be formatted with LaTeX.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../gate/" class="btn btn-neutral float-left" title=".gate Objects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../game_files/" class="btn btn-neutral float-right" title="Game Files">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../gate/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../game_files/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/mesh/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Mesh Format - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Mesh Format";
+        var mkdocs_page_input_path = "thumper\\mesh.md";
+        var mkdocs_page_url = "/aurora/thumper/mesh/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Mesh Format</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#thumper-mesh-conventions">Thumper Mesh Conventions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#uv-coodinate-space">UV Coodinate Space</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#face-winding-and-axis-orientation">Face Winding and Axis Orientation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tooling">Tooling</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#format">Format</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vertex-structure">Vertex Structure</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#triangle-structure">Triangle Structure</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mesh-structure">Mesh Structure</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#known-values-of-_unknownfield4">Known Values of _unknownField4</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mesh-file">Mesh File</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#known-values-for-meshcount">Known Values for meshCount</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#where-meshes-are-seen-in-game">Where Meshes are Seen in-game</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#level-1-crakhed-sections">Level 1 Crakhed Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-2-crakhed-sections">Level 2 Crakhed Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-4-9">Level 4-9</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-7-crakhed-sections">Level 7 Crakhed Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-8-crakhed-sections">Level 8 Crakhed Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-9-crakhed-sections">Level 9 Crakhed Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#level-9-infinity">Level 9-Infinity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#avatar-sections">Avatar Sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#avatar-track-effects">Avatar Track Effects</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tunnels">Tunnels</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#track">Track</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#turns">Turns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyramid">Pyramid</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#other">Other</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Misc</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../dicts_other/">Other Dicts</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+      <li class="breadcrumb-item active">Mesh Format</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/mesh.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mesh-format">Mesh Format</h1>
+<p>Thumper's mesh files are a stripped down version of DirectX .x files. Meshes contain a raw memory dump of vertices and indices along with a few unknowns.</p>
+<p>We know enough about the format to export thumper meshes and replace existing ones. We're unsure exactly how the hashes are computed from paths to mesh files.</p>
+<p>In Thumper a mesh vertex contains a position, normal vector, texture coordinates, and colors. The colors seem to always be rgba of 0.</p>
+<h2 id="thumper-mesh-conventions">Thumper Mesh Conventions</h2>
+<h3 id="uv-coodinate-space">UV Coodinate Space</h3>
+<p>While meshes use 2D texture coodinates, they all seem to lie on a flat line at <code>y = 0</code>. This means Thumper likely doesn't do any traditial texture mapping whatsoever and texture coodinates in your mesh will need to be tuned accordingly.</p>
+<h3 id="face-winding-and-axis-orientation">Face Winding and Axis Orientation</h3>
+<p>Thumper meshes are typically in clockwise winding order. Only certain meshes care about face winding and it's uncertain what determines this. This is not standard in most mesh formats and winding may need to be adjusted.</p>
+<p>Meshes have an inverted Y axis. </p>
+<h2 id="tooling">Tooling</h2>
+<p>With custom software we can take this data and export it into a usable format or take a mesh and replace it for our own custom meshes. <a href="../tooling/#aurora-thumper-cache-decompilation">Aurora</a> has native support to do this.</p>
+<h2 id="format">Format</h2>
+<h3 id="vertex-structure">Vertex Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f32vec3</code></td>
+<td>position</td>
+<td>Position of the vertex</td>
+</tr>
+<tr>
+<td><code>f32vec3</code></td>
+<td>normal</td>
+<td>Normal vector of the mesh</td>
+</tr>
+<tr>
+<td><code>f32vec2</code></td>
+<td>texcoord</td>
+<td>Texture coordinate of the vertex</td>
+</tr>
+<tr>
+<td><code>u8vec4</code></td>
+<td>color</td>
+<td>Color of the vertex</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triangle-structure">Triangle Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u16[3]</code></td>
+<td>indices</td>
+<td>The <code>3</code> indices that form the triangle.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mesh-structure">Mesh Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u32</code></td>
+<td>vertexCount</td>
+<td><em>self explanatory</em></td>
+</tr>
+<tr>
+<td><code>Vertex[vertexCount]</code></td>
+<td>vertices</td>
+<td><em>self explanatory</em></td>
+</tr>
+<tr>
+<td><code>u32</code></td>
+<td>triangleCount</td>
+<td><em>self explanatory</em></td>
+</tr>
+<tr>
+<td><code>Triangle[triangleCount]</code></td>
+<td>triangles</td>
+<td><em>self explanatory</em></td>
+</tr>
+<tr>
+<td><code>u16</code></td>
+<td>_unknownField4</td>
+<td>Typically <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="known-values-of-_unknownfield4">Known Values of <code>_unknownField4</code></h4>
+<ul>
+<li><code>1</code>: This is the most common value</li>
+<li><code>257</code>: This is the other known value for this field. We have no idea what this does currently.</li>
+</ul>
+<p>All known values of <code>_unknownField4</code> are the same across LODs.</p>
+<h3 id="mesh-file">Mesh File</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>u32</code></td>
+<td>header</td>
+<td>Must have a value of <code>6</code></td>
+</tr>
+<tr>
+<td><code>u32</code></td>
+<td>meshCount</td>
+<td>typically <code>1</code></td>
+</tr>
+<tr>
+<td><code>Mesh[meshCount]</code></td>
+<td>meshes</td>
+<td><em>self explanatory</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="known-values-for-meshcount">Known Values for <code>meshCount</code></h4>
+<ul>
+<li><code>1</code>: This is the most common case</li>
+<li><code>2</code>, <code>3</code>, <code>4</code>: Used for LODs (May have other uses)</li>
+<li><code>167</code>, <code>174</code>: These are used as the part of the header of other file types</li>
+</ul>
+<h2 id="where-meshes-are-seen-in-game">Where Meshes are Seen in-game</h2>
+<p>While it's not known where every mesh is used, here's a known list of mesh hashes and where they appear in game.</p>
+<h3 id="level-1-crakhed-sections">Level 1 Crakhed Sections</h3>
+<ul>
+<li><code>6fb05486</code> - Top</li>
+</ul>
+<h3 id="level-2-crakhed-sections">Level 2 Crakhed Sections</h3>
+<ul>
+<li><code>c45c2f8d</code> - Spikes</li>
+<li><code>1b1d80a6</code> - Top</li>
+<li><code>d431c102</code> - Middle</li>
+<li><code>fbb9d827</code> - Bottom</li>
+</ul>
+<h3 id="level-4-9">Level 4-9</h3>
+<ul>
+<li><code>fb5b011d</code> - Tunnel (Global)</li>
+</ul>
+<h3 id="level-7-crakhed-sections">Level 7 Crakhed Sections</h3>
+<ul>
+<li><code>247c1e19</code> - Top</li>
+</ul>
+<h3 id="level-8-crakhed-sections">Level 8 Crakhed Sections</h3>
+<ul>
+<li><code>25921ac9</code> - Top</li>
+</ul>
+<h3 id="level-9-crakhed-sections">Level 9 Crakhed Sections</h3>
+<ul>
+<li><code>8cb8b1b0</code> - Crakhed</li>
+</ul>
+<h3 id="level-9-infinity">Level 9-Infinity</h3>
+<ul>
+<li><code>ba01318a</code> - The smaller pyramids after first damage</li>
+</ul>
+<h3 id="avatar-sections">Avatar Sections</h3>
+<ul>
+<li><code>feecba3a</code> - Elytra / Shell</li>
+<li><code>62a36fa5</code> - Elytra / Shell</li>
+<li><code>80717d3d</code> - Elytra / Shell</li>
+<li><code>8f0b6ae3</code> - Elytra / Shell</li>
+<li><code>820a89</code> - Elytra / Shell</li>
+<li><code>b32ff62c</code> - Elytra / Shell</li>
+<li><code>ea4d6098</code> - Wing</li>
+<li><code>6277f30c</code> - Eyes??</li>
+<li><code>77bdd976</code> - Eyes??</li>
+<li><code>65da49f0</code> - Leg / Mandible??</li>
+<li><code>8da4788c</code> - Leg / Mandible??</li>
+<li><code>b434566c</code> - Leg / Mandible??</li>
+</ul>
+<h3 id="avatar-track-effects">Avatar Track Effects</h3>
+<ul>
+<li><code>21eab766</code> - Used along edges of track while moving</li>
+</ul>
+<h3 id="tunnels">Tunnels</h3>
+<ul>
+<li><code>1571d820</code> - Level 1-1 Tunnel</li>
+</ul>
+<h3 id="track">Track</h3>
+<ul>
+<li><code>23e0f9a6</code> - Left Railing</li>
+<li>
+<p><code>48dda1ca</code> - Right Railing</p>
+</li>
+<li>
+<p><code>8181e627</code> - Track Related???</p>
+</li>
+<li><code>5d18a6d0</code> - Track GFX Related???</li>
+<li><code>5a78fba0</code> - Railing Multilame termination?</li>
+<li><code>7f6179e7</code> - Railing Multilame termination?</li>
+</ul>
+<h3 id="turns">Turns</h3>
+<ul>
+<li><code>8fe857</code> - Long turn midsection</li>
+<li><code>9a879f8d</code> - Long turn midsection</li>
+<li><code>5dac45eb</code> - Long turn end??</li>
+<li><code>a6d88b36</code> - Long turn end??</li>
+<li><code>62f144f5</code> - Track lane end GFX??</li>
+<li><code>9b1b5db4</code> - Track lane end GFX??</li>
+</ul>
+<h2 id="pyramid">Pyramid</h2>
+<p><code>bc09fd01</code> - Pyramid as seen in title and start of 9-infinity</p>
+<h3 id="other">Other</h3>
+<ul>
+<li><code>4ea2877</code> - Checkpoint Section</li>
+<li><code>5a1a0347</code> - Checkpoint Section???</li>
+<li><code>f941ce4b</code> - Unknown Tunnel</li>
+<li><code>dfb1f099</code> - Zillapede</li>
+<li><code>ddde1463</code> - Crakhed, lower jaw</li>
+<li><code>abea8990</code> - Crakhed, bottom</li>
+<li><code>49cdb984</code> - Crakhed, middle</li>
+<li><code>50f9cda3</code> - Crakhed, middle</li>
+<li><code>92750fab</code> - Crakhed, middle</li>
+<li><code>ea65656c</code> - Crakhed, middle</li>
+<li><code>5c4bad17</code> - Crakhed Spikes</li>
+<li><code>91b4e72b</code> - Crakhed Spikes</li>
+<li><code>c971d1b7</code> - Crakhed Spikes</li>
+<li><code>66ac3ee1</code> - Crakhed bottom</li>
+<li><code>ba8f07b4</code> - Crakhed bottom</li>
+<li><code>872bf749</code> - Crakhed top</li>
+<li><code>844d496d</code> - Zillapede (nospike)</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../structures/" class="btn btn-neutral float-left" title="Structures"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mesh_hashes/" class="btn btn-neutral float-right" title=".x Hashes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../structures/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mesh_hashes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

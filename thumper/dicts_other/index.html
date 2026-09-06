@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="AnthoFoxo" /><link rel="canonical" href="https://anthofoxo.xyz/aurora/thumper/dicts_other/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Other Dicts - Thumper Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Other Dicts";
+        var mkdocs_page_input_path = "thumper\\dicts_other.md";
+        var mkdocs_page_url = "/aurora/thumper/dicts_other/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Thumper Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contrib/">Links and Contributors</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Modding</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/tml_deprecation/">What Happened to TML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../modding/install_windows/">Windows Install Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aurora</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >User Guide</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_install_guide/">Installation Guide</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../aurora/user_level_reload/">Reloading Levels</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../aurora/dev_setup_guide/">Developer Installation and Setup Guide</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Extensions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extensions/AUR_tcle_localization/">AUR_tcle_localization</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Thumper</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction/">Concepts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../drools_editor/">What We Know about Drool's Editor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../overall_structure/">Overall Structure of Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_gen_structure/">General Structure of .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../objlib_level_structure/">Structure of Level .objlib Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../basic_types/">Basic Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../structures/">Structures</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh/">Mesh Format</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mesh_hashes/">.x Hashes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../data_types/">Data Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../trait_values/">Trait Values</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Magic Numbers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../magic_numbers/">List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../hashed_file_names/">Hashed File Names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../startup_hashes/">Execution Startup Hashes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_types/">Object Types</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../object_param_selectors/">Object/Parameter Selectors</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Objects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../seqin_objects/">Sequencer Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../script_nodes/">Script Nodes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../master/">.master Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../lvl/">.lvl Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gate/">.gate Objects</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf/">.leaf Objects</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../game_files/">Game Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tooling/">Tooling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Other / WIP</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../audio_channels/">Known Audio Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../anim_decomp/">.anim Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_decom/">.cam Decomp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../leaf_dump/">Every Thumper Leaf File</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../downpatching/">Downpatching</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Misc</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../undoc_headers/">Undocumented Definition Headers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samples_sorted/">Sorted Sample List</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ui_thumper_scoring/">ui_thumper.scoring</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../3d_comp_dict/">3DCompDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cam_object_dict/">CamObjectDict</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../spn_object_dict/">SpnObjectDict</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Other Dicts</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#defaultgroupdict">DefaultGroupDict</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#drawcompdict">DrawCompDict</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gatebossdict">gateBossDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gateobjectdict">gateObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#leafobjectdict">leafObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#leaftimecompdict">leafTimeCompDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#levellibdict">LevelLibDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lvlchilddict">lvlChildDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lvlobjectdict">lvlObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lvlsampledict">lvlSampleDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lvltimecompdict">lvlTimeCompDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mastergroupingdict">masterGroupingDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#masterobjectdict">masterObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#matobjectdict">matObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#playspaceobjectdict">playspaceObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sampobjectdict">sampObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sequencerobjectdict">SequencerObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#objectdict">ObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#envobjectdict">envObjectDict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#datapointtemplate">DataPointTemplate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#float32datapoint">float32DataPoint</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Thumper Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Thumper</li>
+          <li class="breadcrumb-item">Misc</li>
+      <li class="breadcrumb-item active">Other Dicts</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/anthofoxo/aurora/tree/docs/docs/thumper/dicts_other.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="other-dicts">Other Dicts</h1>
+<p>This page contains misc information from the tiddlyhost.</p>
+<h2 id="defaultgroupdict">DefaultGroupDict</h2>
+<pre><code>start://Start of the default group section?//
+default-group://Default group?//
+</code></pre>
+<h3 id="drawcompdict">DrawCompDict</h3>
+<pre><code>start:Start of the draw definition section
+first://Unknown//
+visible:Visible
+layer:Draw layer. See [[Layer Trait]] for a list of allowed values.
+bucket:Render bucket. See [[Bucket Trait]] for a list of allowed values.
+draw-children-count:Number of draw children
+draw-child-name:Draw child name
+</code></pre>
+<h2 id="gatebossdict">gateBossDict</h2>
+<pre><code>name-hash:[[Gate Level Script Node|Gate Level Script Nodes]] name hash
+lvl:Boss pattern [[.lvl|.lvl Objects]] object name
+bool://Unknown//
+sentry:Gate sentry type. See [[Gate Sentry Trait]] for a list of allowed values.
+hash://Unknown//
+int32:Bucket number
+</code></pre>
+<h2 id="gateobjectdict">gateObjectDict</h2>
+<pre><code>spn:[[.spn|.spn Objects]] object name
+pattern-count:Number of boss patterns
+pre-boss-lvl:Pre-boss .lvl object name
+post-boss-lvl:Post-boss .lvl object name
+restart-lvl:Restart .lvl object name
+int32://Unknown//
+section-type:Section type. See [[Section Type Trait]] for a list of allowed values.
+float32://Unknown//
+level-random-type:Level random type. See [[Level Random Type Trait]] for a list of allowed values.
+</code></pre>
+<h2 id="leafobjectdict">leafObjectDict</h2>
+<pre><code>version:Version number of ~SequinLeaf (.leaf Object)
+beat-count:Total number of beats in this .leaf Object
+</code></pre>
+<h2 id="leaftimecompdict">leafTimeCompDict</h2>
+<pre><code>start:Start of the ~AnimComp (animation component) section
+int32:Version number of ~AnimComp (animation component)
+float32:Frame
+time-unit:Unit of time. See [[Time Trait]] for a list of allowed values.
+</code></pre>
+<h2 id="levellibdict">LevelLibDict</h2>
+<pre><code>world-cam:World cam
+handheld-cam:Handheld cam
+portrait-cam:Portrait cam
+avatar:Avatar
+bpm:BPM
+sequin-drawer:Sequin drawer
+sequin-master:Sequin master
+</code></pre>
+<h2 id="lvlchilddict">lvlChildDict</h2>
+<pre><code>header-first://Unknown//
+header-move-phase://Unknown//. See [[Move Phase Trait]] for a list of allowed values.
+header-last://Unknown//
+start:Start of a new [[.leaf Object|.leaf Objects]]
+int32-1://Unknown//
+beat-count:Total number of beats in this [[.leaf Object|.leaf Objects]]
+bool-2://Unknown//
+leaf:Name of the [[.leaf Object|.leaf Objects]]
+path://Unknown .path object name//
+sub-path-count://Unknown//
+sub-path://Unknown .path object name//
+sub-path-last://Unknown//
+step://Unknown//. See [[Step Trait]] for a list of allowed values.
+int32-2:Offset between the current and previous [[.leaf Objects]]
+pos://Position?//
+rot-x://Rotation x?//
+rot-y://Rotation y?//
+rot-z://Rotation z?//
+scale://Scale?//
+end:End of .leaf sequence
+</code></pre>
+<h2 id="lvlobjectdict">lvlObjectDict</h2>
+<pre><code>footer-bool-1://Unknown//
+footer-volume:Volume
+footer-int32-1://Unknown//
+footer-int32-2://Unknown//
+footer-trait-type:Trait type. See [[Trait Type Trait]] for a list of allowed values.
+footer-input-allowed:Input allowed
+footer-tutorial-type:Tutorial type. See [[Tutorial Type Trait]] for a list of allowed values.
+footer-start-angle-fracs:Start angle fracs
+</code></pre>
+<h2 id="lvlsampledict">lvlSampleDict</h2>
+<pre><code>sample:Sample object name
+beat-count:Number of beats per loop
+last://Unknown//
+</code></pre>
+<h2 id="lvltimecompdict">lvlTimeCompDict</h2>
+<pre><code>start:Start of the approach animation definition section
+int32://Unknown//
+float32://Unknown//
+time-unit:Unit of time. See [[Time Trait]] for a list of allowed values.
+int32-2://Unknown//
+int32-3:Approach beats
+</code></pre>
+<h2 id="mastergroupingdict">masterGroupingDict</h2>
+<pre><code>lvl:[[.lvl|.lvl Objects]] object name
+gate:[[.gate|.gate Objects]] object name
+checkpoint:Checkpoint
+checkpoint-leader-lvl:Checkpoint leader [[.lvl|.lvl Objects]] object name
+rest-lvl:Rest [[.lvl|.lvl Objects]] object name
+play-plus:PLAY +
+</code></pre>
+<h2 id="masterobjectdict">masterObjectDict</h2>
+<pre><code>first://Unknown//
+second://Unknown//
+skybox:Skybox object name
+intro-lvl:Intro [[.lvl|.lvl Objects]] object name
+grouping-count:Number of groupings of [[.lvl|.lvl Objects]]/[[.gate|.gate Objects]] Objects
+footer-bool-1://Unknown//
+footer-bool-2://Unknown//
+footer-int32-1://Unknown//
+footer-int32-2://Unknown//
+footer-int32-3://Unknown//
+footer-int32-4://Unknown//
+footer-float32-1://Unknown//
+footer-float32-2://Unknown//
+footer-float32-3://Unknown//
+checkpoint-lvl:Checkpoint .lvl object name
+path-gameplay://Unknown//
+</code></pre>
+<h2 id="matobjectdict">matObjectDict</h2>
+<pre><code>decal-map://Decal map?//
+emissive-map://Emissive map?//
+specular-map://Specular map?//
+reflectivity-map://Reflectivity map?//
+reflection-map://Reflection map?//
+emissive-color://Emissive color?//
+ambient-color://Ambient color?//
+diffuse-color://Diffuse color?//
+specular-color://Specular color?//
+reflectivity-color://Reflectivity color?//
+tex-pos://Texture pos?//
+tex-scale://Texture scale?//
+tex-rot://Texture rot?//
+alpha://Alpha?//
+blending:Blending. See [[Blend Trait]] for a list of allowed values.
+cull-mode:Cull mode. See [[Cull Mode Trait]] for a list of allowed values.
+z-mode:Z mode. See [[Z Mode Trait]] for a list of allowed values.
+stencil-channel:Stencil channel. See [[Stencil Channel Trait]] for a list of allowed values.
+mat-filtering:Material filtering. See [[Material Filtering Trait]] for a list of allowed values.
+mat-lighting:Material lighting. See [[Material Lighting Trait]] for a list of allowed values.
+tex-xfm-mode:Texture transform mode. See [[Texture Transform Mode Trait]] for a list of allowed values.
+alpha-temp:|[[float32]] |`52a06bf4` |alpha |Controls the opacity of the tunnel or lattice around the track. The allowed values for alpha $$a$$ are: $$\{a∈\mathbb {R}\ |\ 0\leq a \leq 1\}$$.  |
+</code></pre>
+<h2 id="playspaceobjectdict">playspaceObjectDict</h2>
+<pre><code>world-scale:World scale
+eye-distance-scale:Eye distance scale
+near-x-min:Near x min
+near-x-max:Near x max
+near-y-min:Near y min
+near-y-max:Near y max
+near-z-min:Near z min
+near-z-max:Near z max
+near-recenter-secs:Near recenter secs
+far-x-min:Far x min
+far-x-max:Far x max
+far-y-min:Far y min
+far-y-max:Far y max
+far-z-min:Far z min
+far-z-max:Far z max
+far-recenter-secs:Far recenter secs
+recenter-max-velocity:Recenter max velocity
+</code></pre>
+<h2 id="sampobjectdict">sampObjectDict</h2>
+<pre><code>mode:Sample play mode. See [[Sample Mode Trait]] for a list of allowed values.
+int32-1://Unknown//
+path:Path
+int32-2://Loop count?//
+stream://Stream?//
+volume:Volume
+pitch:Pitch
+pan:Pan
+offset:Offset (ms)
+channel-group:Channel group
+</code></pre>
+<h2 id="sequencerobjectdict">SequencerObjectDict</h2>
+<pre><code>version:Version number of ~TraitAnim (trait animation)
+main-object:Name of the main object where the parameter can be found
+sub-level-count:Number of sub-levels under the main object to get to the specific sub-object/parameter
+sub-object:The [[&quot;magic number&quot;|Object/Parameter Selectors]] identifying which sub-object is to be selected
+parameter:The [[&quot;magic number&quot;|Object/Parameter Selectors]] identifying which parameter is to be selected
+sub-object-index-prefix:Selects the
+sub-object-index-suffix:sub-object, using zero-based numbering
+header-last:The index identifying the data type of the values in the data points. See [[Trait Type Trait]] for a list of allowed values.
+data-point-count:Total number of data points
+editor-data-point-count:Total number of displayed UI elements for data points on [[Drool's Editor|What We Know about Drool's Editor]]
+footer-1://Unknown//
+footer-2://Unknown//
+footer-3://Unknown//
+footer-4://Unknown//
+footer-5://Unknown//
+footer-6://Unknown//. See [[Intensity Trait]] for a list of allowed values.
+footer-7://Unknown//. See [[Intensity Trait]] for a list of allowed values.
+footer-8://Unknown//
+footer-9://Unknown//
+footer-10://Unknown//
+footer-11://Unknown//
+footer-12://Unknown//
+footer-13://Unknown//
+footer-14://Unknown//
+footer-15://Unknown//
+footer-16://Unknown//
+footer-17://Unknown//
+footer-18://Unknown//
+</code></pre>
+<h2 id="objectdict">ObjectDict</h2>
+<pre><code>int32-0://Unknown//
+int32-1://Unknown//
+int32-2://Unknown//
+version:Version number of Obj
+section-count:Number of section markers
+main-start:Start of the ~EditStateComp (edit state component) section
+</code></pre>
+<h2 id="envobjectdict">envObjectDict</h2>
+<pre><code>ambient-color:Ambient color
+light-count:Number of lights
+light-name:Name of light
+fog-color:Fog color
+fog-density:Fog density
+</code></pre>
+<h2 id="datapointtemplate">DataPointTemplate</h2>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td>At what time (in beats) this data point occurs.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>variable</td>
+<td>The value this data point holds. The specific meaning of this value depends on the data type and the context.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td>What interpolation method is applied on this data point with its neighboring data points. See Interpolation Trait for a list of allowed values.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td>What easing method is applied on this data point with its neighboring data points. See Easing Trait for a list of allowed values.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="float32datapoint">float32DataPoint</h2>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td>At what time (in beats) this data point occurs. For float32DataPoint, the allowed values for time depend on the context.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>float32</td>
+<td>The floating-point value this data point holds. The specific meaning of this value depends on the context.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td>What interpolation method is applied on this data point with its neighboring data points. See Interpolation Trait for a list of allowed values.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>string</td>
+<td>What easing method is applied on this data point with its neighboring data points. See Easing Trait for a list of allowed values.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../spn_object_dict/" class="btn btn-neutral float-left" title="SpnObjectDict"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/anthofoxo/aurora" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../spn_object_dict/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
