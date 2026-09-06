@@ -4,12 +4,12 @@ To understand how the game files work, it is useful to learn as much as possible
 Here is a list of publicly known information about Drool's Editor.
 
 ## Video Demos
-* [The Devolution of Thumper – Brian Gibson in conversation with Csongor Baranyai](https://youtu.be/GUZHY8GPfVg)
-* [Seven Years in Alpha: The Thumper Postmortem](https://youtu.be/ckm8_SEIXQM)
+* [The Devolution of Thumper – Brian Gibson in conversation with Csongor Baranyai](https://www.youtube.com/watch?v=GUZHY8GPfVg)
+* [Seven Years in Alpha: The Thumper Postmortem](https://www.youtube.com/watch?v=ckm8_SEIXQM)
 
-## Slides
-* [Seven Years in Alpha: The Thumper Postmortem](../files/GDC2017_ThumperPostmortem.pdf)
-* [Developing Tools for Indie Games by Marc Flurry](../files/kgc2014_marcflury.pptx)
+## Slides and Presentations
+* [Seven Years in Alpha: The Thumper Postmortem](../archive/GDC2017_ThumperPostmortem.pdf)
+* [Developing Tools for Indie Games](../archive/kgc2014_marcflury.pptx)
 
 ## Web Pages
 * [Engine Tech Update](https://thumpergame.com/blog/2014/09/03/engine-tech-update)

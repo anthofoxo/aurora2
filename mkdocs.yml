@@ -10,6 +10,7 @@ extra_css:
   - extra.css
 nav:
   - Home: index.md
+  - "Links and Contributors": contrib.md
   - Modding:
     - Overview: modding/overview.md
     - What Happened to TML: modding/tml_deprecation.md
@@ -19,12 +20,46 @@ nav:
       - "Installation Guide": aurora/user_install_guide.md
       - "Reloading Levels": aurora/user_level_reload.md
     - "Developer Installation and Setup Guide": aurora/dev_setup_guide.md
+    - Extensions:
+      - AUR_tcle_localization: extensions/AUR_tcle_localization.md
   - Thumper:
-    - Introduction: thumper/index.md
-    - Overview:
-      - "What We Know about Drool's Editor": thumper/drools_editor.md
-      - "Overall File Structure": thumper/overall_structure.md
-      - "Objlib Structure": thumper/objlib_structure.md
-      - "Level Objlib Structure": thumper/level_objlib_structure.md
-    - Data Types:
-      - Basic Data Types: thumper/basic_types.md
+    - Concepts: thumper/introduction.md
+    - "What We Know about Drool's Editor": thumper/drools_editor.md
+    - "Overall Structure of Game Files": thumper/overall_structure.md
+    - "General Structure of .objlib Files": thumper/objlib_gen_structure.md
+    - "Structure of Level .objlib Files": thumper/objlib_level_structure.md
+    - Basic Data Types: thumper/basic_types.md
+    - "Structures": thumper/structures.md
+    - "Mesh Format": thumper/mesh.md
+    - ".x Hashes": thumper/mesh_hashes.md
+    - "Data Types": thumper/data_types.md
+    - "Trait Values": thumper/trait_values.md
+    - "Magic Numbers":
+      - "List": thumper/magic_numbers.md
+      - "Hashed File Names": thumper/hashed_file_names.md
+      - "Execution Startup Hashes": thumper/startup_hashes.md
+      - "Object Types": thumper/object_types.md
+      - "Object/Parameter Selectors": thumper/object_param_selectors.md
+    - Objects:
+      - "Sequencer Objects": thumper/seqin_objects.md
+      - "Script Nodes": thumper/script_nodes.md
+      - ".master Objects": thumper/master.md
+      - ".lvl Objects": thumper/lvl.md
+      - ".gate Objects": thumper/gate.md
+      - ".leaf Objects": thumper/leaf.md
+    - "Game Files": thumper/game_files.md
+    - "Tooling": thumper/tooling.md
+    - "Other / WIP":
+      - "Known Audio Channels": thumper/audio_channels.md
+      - ".anim Decomp": thumper/anim_decomp.md
+      - ".cam Decomp": thumper/cam_decom.md
+      - "Every Thumper Leaf File": thumper/leaf_dump.md
+    - Downpatching: thumper/downpatching.md
+    - Misc:
+      - "Undocumented Definition Headers": thumper/undoc_headers.md
+      - "Sorted Sample List": thumper/samples_sorted.md
+      - "ui_thumper.scoring": thumper/ui_thumper_scoring.md
+      - "3DCompDict": thumper/3d_comp_dict.md
+      - "CamObjectDict": thumper/cam_object_dict.md
+      - "SpnObjectDict": thumper/spn_object_dict.md
+      - "Other Dicts": thumper/dicts_other.md
