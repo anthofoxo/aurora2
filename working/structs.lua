@@ -353,11 +353,11 @@ CreditsStruct_HeadingGroup headings[]
 CreditsStruct_Section credits[]
 ]=]
 
-local LevelListingStruct_List = [=[
+LevelListingStruct_List = [=[
     LevelListingStruct_Entry entries[]
 ]=]
 
-local LevelListingStruct_Entry = [=[
+LevelListingStruct_Entry = [=[
 sstr key
 u32 _
 sstr path
