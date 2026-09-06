@@ -12,7 +12,7 @@ static void crit_error(char const* aError) {
 	MessageBoxA(nullptr, aError, "Aurora Launcher Error", MB_ICONERROR);
 }
 
-int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd) {
+int main(int argc, char* argv[]) {
 	if (auto module = LoadLibraryA("aurora.dll")) {
 		if (auto startproc = (void(*)(void))GetProcAddress(module, "aur_startup")) {
 			std::cerr << "Procedure OK\n";
@@ -28,4 +28,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 	}
 
 	return EXIT_SUCCESS;
+}
+
+int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd) {
+	return main(__argc, __argv);
 }

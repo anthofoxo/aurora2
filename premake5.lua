@@ -31,7 +31,10 @@ systemversion "latest"
 defines { "NOMIXMAX", "WIN32_LEAN_AND_MEAN", "_CRT_SECURE_NO_WARNINGS" }
 buildoptions { "/EHsc", "/Zc:throwingNew", "/Zc:preprocessor", "/Zc:__cplusplus", "/experimental:c11atomics" }
 
-defines "TRACY_ENABLE"
+defines {
+	"TRACY_ENABLE",
+	"YAML_CPP_STATIC_DEFINE",
+}	
 
 startproject "launcher"
 include "aurora/build.lua"

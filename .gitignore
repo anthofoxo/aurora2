@@ -1,6 +1,7 @@
 /.vs
 /bin
 /bin_int
+/docs
 *.sln
 *.vcxproj
 *.vcxproj.user
